@@ -1,0 +1,35 @@
+---
+import SiteFooter from "@components/SiteFooter.astro";
+import SiteHead from "@components/SiteHead.astro";
+import TopNav from "@components/TopNav.astro";
+import { defaultLocale, type Locale } from "@i18n";
+import "@styles/global.css";
+
+interface Props {
+    description?: string;
+    locale?: Locale;
+    namespace: string;
+    title?: string;
+}
+
+const { description, locale = defaultLocale, namespace, title } = Astro.props;
+---
+
+<!doctype html>
+<html class="scrollbar-gutter-stable" lang={locale}>
+    <head>
+        <SiteHead
+            description={description}
+            locale={locale}
+            namespace={namespace}
+            title={title}
+        />
+    </head>
+    <body class="m-0 flex min-h-screen flex-col bg-(--color-background) font-sans leading-normal text-(--color-foreground)">
+        <TopNav locale={locale} />
+        <div class="flex flex-1 flex-col transition-[filter,opacity] duration-menu [body:has(#mobile-nav-menu:popover-open)_&]:blur-sm [body:has(#mobile-nav-menu:popover-open)_&]:opacity-70">
+            <slot />
+            <SiteFooter locale={locale} />
+        </div>
+    </body>
+</html>

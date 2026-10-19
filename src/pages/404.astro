@@ -1,0 +1,50 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+    description="The page you requested could not be found."
+    namespace="home"
+    title="404 - Page not found"
+>
+    <main class="flex flex-1 items-center justify-center px-5 py-16 sm:px-8">
+        <section class="text-center">
+            <pre
+                aria-label="A cat"
+                class="mx-auto mb-4 w-max text-left text-sm"
+                role="img"
+            >
+       _
+       \`*-.
+        )  _`-.
+       .  : `. .
+       : _   '  \
+       ; *` _.   `*-._
+       `-.-'          `-.
+         ;       `       `.
+         :.       .        \
+         . \  .   :   .-'   .
+         '  `+.;  ;  '      :
+         :  '  |    ;       ;-.
+         ; '   : :`-:     _.`* ;
+[bug] .*' /  .*' ; .*`- +'  `*'
+      `*-*   `*-*  `*-*'
+            </pre>
+            <p class="mb-2 text-xs uppercase tracking-wide text-(--color-muted)">
+                Error 404
+            </p>
+            <h1 class="mb-4 text-[clamp(var(--text-2xl),5vw,var(--text-4xl))]">
+                Page not found
+            </h1>
+            <p class="mb-8 text-(--color-secondary)">
+                We couldn't find the page you were looking for.
+            </p>
+            <a
+                class="text-(--color-accent) underline underline-offset-4"
+                href="/"
+            >
+                Return home
+            </a>
+        </section>
+    </main>
+</BaseLayout>

@@ -1,0 +1,40 @@
+{
+  "description": "Proyectos que he disfrutado desarrollar.",
+  "items": [
+    {
+      "description": [
+        "Desarrollo de una plataforma web para el aprendizaje de la programación.",
+        "El proyecto involucró la implementación de una interfaz de usuario moderna, la integración de tecnologías web frontend y backend, y la creación de un sistema de retroalimentación pedagógica basado en LLM y MCP.",
+        "El resultado final fue una plataforma funcional que permite a los usuarios aprender a programar, ejecutar código de manera efectiva y recibir retroalimentación personalizada."
+      ],
+      "image": "programming-learning-platform",
+      "link": "https://github.com/Josu-A/gral",
+      "technologies": "TypeScript, Node.js, PostgreSQL, Express, React, TailwindCSS, Docker, MCP",
+      "title": "Plataforma web para el aprendizaje de la programación: retroalimentación pedagógica a través de LLM y MCP"
+    },
+    {
+      "description": [
+        "Desarrollo de un modelo de red neuronal convolucional para el análisis de imágenes de galaxias.",
+        "El proyecto involucró la implementación de algoritmos de aprendizaje profundo basados en ResNet y bloques residuales, el entrenamiento y evaluación del modelo, y la visualización de los resultados.",
+        "El resultado final fue un modelo eficiente y preciso que puede clasificar imágenes de galaxias con alta precisión."
+      ],
+      "image": "galaxycnn",
+      "link": "https://github.com/Josu-A/GalaxyCNN",
+      "technologies": "Python, PyTorch, Jupyter, Deep Learning",
+      "title": "GalaxyCNN"
+    },
+    {
+      "description": [
+        "Creación de una versión del juego Snake para Nintendo DS, utilizando C y la librería libnds para el desarrollo de homebrew.",
+        "El proyecto implicó la implementación de mecánicas de juego, manejo de gráficos, optimización del rendimiento en la consola y investigación de las capacidades del hardware.",
+        "El resultado final fue un juego funcional y entretenido que demuestra habilidades en programación de bajo nivel y desarrollo de software para plataformas específicas."
+      ],
+      "image": "nintendo-ds-snake",
+      "link": "https://github.com/Josu-A/nds-snake",
+      "technologies": "C, libnds, low-level",
+      "title": "Nintendo DS Snake"
+    }
+  ],
+  "title": "Proyectos que he disfrutado desarrollar",
+  "viewProject": "Ver proyecto"
+}

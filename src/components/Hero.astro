@@ -1,0 +1,44 @@
+---
+import { getTranslator, type Locale } from "@i18n";
+import portrait from "@images/portrait.jpg";
+import { Image } from "astro:assets";
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslator(locale, "home");
+const greetingName = t("hero.greetingName");
+const greetingPrefix = t("hero.greetingPrefix");
+const greetingSuffix = t("hero.greetingSuffix");
+const lead = t("hero.lead");
+---
+
+<section
+    aria-labelledby="hero-title"
+    class="mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 py-8 font-serif sm:px-8"
+>
+    <Image
+        alt="Portrait of Josu Aguinaga"
+        class="mb-4 size-36 rounded-[25%] object-cover object-top select-none shadow-md sm:size-64 sm:shadow-xl"
+        draggable={false}
+        format="webp"
+        height={400}
+        loading="eager"
+        quality={80}
+        src={portrait}
+        width={320}
+    />
+    <h1
+        class="mb-4 max-w-3xl text-[clamp(var(--text-6xl),5vw,var(--text-8xl))]/[0.9] font-normal text-balance text-center"
+        id="hero-title"
+    >
+        {greetingPrefix}{" "}
+        <span class="text-(--color-accent)">{greetingName}</span>
+        {greetingSuffix && ` ${greetingSuffix}`}
+    </h1>
+    <p class="max-w-lg text-center text-balance text-[clamp(var(--text-xl),2.5vw,var(--text-3xl))]">
+        {lead}
+    </p>
+</section>

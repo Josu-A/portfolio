@@ -1,0 +1,94 @@
+---
+import type { ImageMetadata } from "astro";
+
+import { getTranslator, type Locale } from "@i18n";
+import ExternalLinkIcon from "@images/external-link.svg";
+import { Image } from "astro:assets";
+
+interface Props {
+    class?: string;
+    description: string | string[];
+    eager?: boolean;
+    image?: ImageMetadata;
+    link?: string;
+    locale: Locale;
+    reverse?: boolean;
+    technologies: string;
+    title: string;
+}
+
+const {
+    class: className,
+    description,
+    eager = false,
+    image,
+    link,
+    locale,
+    reverse = false,
+    technologies,
+    title,
+} = Astro.props;
+
+const descriptions = Array.isArray(description) ? description : [description];
+
+const t = getTranslator(locale, "projects");
+const viewProjectText = t("viewProject");
+---
+
+<article
+    class:list={[
+        "relative z-0 grid items-center gap-4 py-2 transition-transform duration-hover hover:z-10 hover:scale-[1.03]",
+        image &&
+            (reverse
+                ? "sm:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]"
+                : "sm:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]"),
+        !image && "max-w-xl",
+        className,
+    ]}
+>
+    {image && (
+        <Image
+            alt={title}
+            class:list={[
+                "aspect-auto w-full object-contain max-h-48 drop-shadow-xl sm:max-h-none",
+                reverse ? "sm:order-1" : "sm:order-2",
+            ]}
+            priority={eager}
+            src={image}
+        />
+    )}
+    <div
+        class:list={[
+            !reverse && image && "sm:order-1",
+            reverse && image && "sm:order-2",
+        ]}
+    >
+        <h3 class="mb-3 text-3xl font-normal">{title}</h3>
+        <div class="max-w-2xl text-(--color-secondary) space-y-3">
+            {descriptions.map((p) => (
+                <p>{p}</p>
+            ))}
+        </div>
+        <div class="mt-4 flex text-xs items-center justify-between gap-8">
+            <p class="font-mono uppercase tracking-tight text-(--color-muted)">
+                {technologies}
+            </p>
+            {link && (
+                <a
+                    class="group flex items-center gap-2 text-(--color-accent) transition-colors duration-hover hover:text-(--color-foreground)"
+                    href={link}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <span class="font-mono uppercase tracking-tight">
+                        {viewProjectText}
+                    </span>
+                    <ExternalLinkIcon
+                        aria-hidden="true"
+                        class="size-2 shrink-0 self-start"
+                    />
+                </a>
+            )}
+        </div>
+    </div>
+</article>

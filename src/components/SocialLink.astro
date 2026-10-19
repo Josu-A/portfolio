@@ -1,0 +1,15 @@
+---
+import type { SocialLinkData } from "@shared/social-link";
+
+import ExternalLinkIcon from "@images/external-link.svg";
+
+type Props = SocialLinkData;
+
+const { href, icon: Icon, label } = Astro.props;
+---
+
+<a class="inline-flex items-center gap-2 leading-none" href={href}>
+    <Icon aria-hidden="true" class="size-4 shrink-0" />
+    {label}
+    <ExternalLinkIcon aria-hidden="true" class="size-2 shrink-0 self-start" />
+</a>

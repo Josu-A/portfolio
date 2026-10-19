@@ -1,0 +1,16 @@
+{
+    "endOfLine": "lf",
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+    "tailwindPreserveDuplicates": true,
+    "tailwindStylesheet": "src/styles/global.css",
+    "tabWidth": 4,
+    "useTabs": false,
+    "overrides": [
+        {
+            "files": "*.json",
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}

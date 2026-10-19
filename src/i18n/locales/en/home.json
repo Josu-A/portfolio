@@ -1,0 +1,10 @@
+{
+  "description": "Portfolio of Josu Aguinaga.",
+  "hero": {
+    "greetingName": "Josu",
+    "greetingPrefix": "Hi, I’m",
+    "greetingSuffix": "",
+    "lead": "I’m a software engineer who enjoys working with new technologies."
+  },
+  "title": "Josu Aguinaga's Space"
+}

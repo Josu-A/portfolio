@@ -1,0 +1,40 @@
+{
+  "description": "Projects I enjoyed working on.",
+  "items": [
+    {
+      "description": [
+        "Development of a web platform for learning programming.",
+        "The project involved implementing a modern user interface, integrating frontend and backend web technologies, and building a pedagogical feedback system based on LLM and MCP.",
+        "The end result was a functional platform that allows users to learn programming, run code effectively, and receive personalized feedback."
+      ],
+      "image": "programming-learning-platform",
+      "link": "https://github.com/Josu-A/gral",
+      "technologies": "TypeScript, Node.js, PostgreSQL, Express, React, TailwindCSS, Docker, MCP",
+      "title": "Web platform for learning programming: pedagogical feedback through LLM and MCP"
+    },
+    {
+      "description": [
+        "Development of a convolutional neural network model for galaxy image analysis.",
+        "The project involved implementing deep learning algorithms based on ResNet and residual blocks, training and evaluating the model, and visualizing the results.",
+        "The end result was an efficient and accurate model that can classify galaxy images with high precision."
+      ],
+      "image": "galaxycnn",
+      "link": "https://github.com/Josu-A/GalaxyCNN",
+      "technologies": "Python, PyTorch, Jupyter, Deep Learning",
+      "title": "GalaxyCNN"
+    },
+    {
+      "description": [
+        "Creation of a version of the Snake game for the Nintendo DS, using C and the libnds library for homebrew development.",
+        "The project involved implementing game mechanics, handling graphics, optimizing performance on the console, and researching the hardware's capabilities.",
+        "The end result was a functional and entertaining game that demonstrates skills in low-level programming and software development for specific platforms."
+      ],
+      "image": "nintendo-ds-snake",
+      "link": "https://github.com/Josu-A/nds-snake",
+      "technologies": "C, libnds, low-level",
+      "title": "Nintendo DS Snake"
+    }
+  ],
+  "title": "Projects I enjoyed working on",
+  "viewProject": "View project"
+}

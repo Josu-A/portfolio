@@ -1,0 +1,21 @@
+{
+  "footer": "© {{year}} Josu Aguinaga",
+  "languageLabel": "Hizkuntza",
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "eu": "Euskara"
+  },
+  "nav": {
+    "closeMenu": "Nabigazio-menua itxi",
+    "contact": "Kontaktatu",
+    "openMenu": "Nabigazio-menua ireki",
+    "projects": "Proiektuak"
+  },
+  "theme": {
+    "dark": "Iluna",
+    "label": "Kolore-gaia",
+    "light": "Argia",
+    "system": "Sistema"
+  }
+}

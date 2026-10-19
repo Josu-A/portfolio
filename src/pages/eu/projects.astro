@@ -1,0 +1,14 @@
+---
+import type { Locale } from "@i18n";
+
+import ProjectsSection from "@components/ProjectsSection.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const locale: Locale = "eu";
+---
+
+<BaseLayout locale={locale} namespace="projects">
+    <main>
+        <ProjectsSection locale={locale} />
+    </main>
+</BaseLayout>

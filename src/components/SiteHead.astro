@@ -1,0 +1,61 @@
+---
+import {
+    defaultLocale,
+    getTranslator,
+    type Locale,
+    locales,
+    stripLocalePrefix,
+} from "@i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { ClientRouter } from "astro:transitions";
+
+interface Props {
+    description?: string;
+    locale?: Locale;
+    namespace: string;
+    title?: string;
+}
+
+const {
+    description: customDescription,
+    locale = defaultLocale,
+    namespace,
+    title: customTitle,
+} = Astro.props;
+const pagePath = stripLocalePrefix(Astro.url.pathname);
+const alternatePagePath = pagePath.replace(/^\/|\/$/g, "") || "";
+const t = getTranslator(locale, namespace);
+const description = customDescription ?? t("description");
+const title = customTitle ?? t("title");
+---
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+<meta charset="utf-8" />
+<meta content={Astro.generator} name="generator" />
+
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+<title>{title}</title>
+<meta content={title} name="title" />
+<meta content={description} name="description" />
+<meta content={locale} property="og:locale" />
+{locales.map((alternateLocale) => (
+    <link
+        href={getRelativeLocaleUrl(alternateLocale, alternatePagePath)}
+        hreflang={alternateLocale}
+        rel="alternate"
+    />
+))}
+<link
+    href={getRelativeLocaleUrl(defaultLocale, alternatePagePath)}
+    hreflang="x-default"
+    rel="alternate"
+/>
+
+<script is:inline>
+    document.documentElement.dataset.theme =
+        localStorage.getItem("theme") || "system";
+</script>
+<script src="@scripts/theme.ts"></script>
+
+<ClientRouter />

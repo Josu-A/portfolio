@@ -1,0 +1,21 @@
+{
+  "footer": "© {{year}} Josu Aguinaga",
+  "languageLabel": "Language",
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "eu": "Euskara"
+  },
+  "nav": {
+    "closeMenu": "Close navigation menu",
+    "contact": "Contact me",
+    "openMenu": "Open navigation menu",
+    "projects": "Projects"
+  },
+  "theme": {
+    "dark": "Dark",
+    "label": "Color theme",
+    "light": "Light",
+    "system": "System"
+  }
+}
