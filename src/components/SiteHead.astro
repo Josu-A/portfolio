@@ -30,6 +30,7 @@ const {
 const pagePath = stripLocalePrefix(Astro.url.pathname);
 const alternatePagePath = pagePath.replace(/^\/|\/$/g, "") || "";
 const t = getTranslator(locale, namespace);
+const tCommon = getTranslator(locale, "common");
 const description = customDescription ?? t("description");
 const title = customTitle ?? t("title");
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -63,7 +64,7 @@ const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
 <meta content={openGraphImageURL} property="og:image" />
 <meta content={openGraphImage.attributes.width} property="og:image:width" />
 <meta content={openGraphImage.attributes.height} property="og:image:height" />
-<meta content="Portrait of Josu Aguinaga" property="og:image:alt" />
+<meta content={tCommon("portraitAlt")} property="og:image:alt" />
 <meta content={localeMetadata[locale].openGraph} property="og:locale" />
 {locales
     .filter((alternateLocale) => alternateLocale !== locale)

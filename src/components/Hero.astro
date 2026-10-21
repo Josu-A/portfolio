@@ -9,6 +9,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = getTranslator(locale, "home");
+const tCommon = getTranslator(locale, "common");
 const greetingName = t("hero.greetingName");
 const greetingPrefix = t("hero.greetingPrefix");
 const greetingSuffix = t("hero.greetingSuffix");
@@ -20,7 +21,7 @@ const lead = t("hero.lead");
     class="mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 py-8 font-serif sm:px-8"
 >
     <Image
-        alt="Portrait of Josu Aguinaga"
+        alt={tCommon("portraitAlt")}
         class="mb-4 size-36 rounded-[25%] object-cover object-top select-none shadow-md sm:size-64 sm:shadow-xl"
         draggable={false}
         format="webp"

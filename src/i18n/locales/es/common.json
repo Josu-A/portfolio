@@ -9,9 +9,11 @@
   "nav": {
     "closeMenu": "Cerrar menú de navegación",
     "contact": "Contactar",
+    "label": "Navegación principal",
     "openMenu": "Abrir menú de navegación",
     "projects": "Proyectos"
   },
+  "portraitAlt": "Retrato de Josu Aguinaga",
   "theme": {
     "dark": "Oscuro",
     "label": "Tema de color",

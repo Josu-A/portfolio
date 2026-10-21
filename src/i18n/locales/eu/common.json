@@ -9,9 +9,11 @@
   "nav": {
     "closeMenu": "Nabigazio-menua itxi",
     "contact": "Kontaktatu",
+    "label": "Nabigazio nagusia",
     "openMenu": "Nabigazio-menua ireki",
     "projects": "Proiektuak"
   },
+  "portraitAlt": "Josu Aguinagaren erretratua",
   "theme": {
     "dark": "Iluna",
     "label": "Kolore-gaia",
