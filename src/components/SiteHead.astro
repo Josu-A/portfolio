@@ -16,6 +16,7 @@ interface Props {
     description?: string;
     locale?: Locale;
     namespace: string;
+    noindex?: boolean;
     title?: string;
 }
 
@@ -23,6 +24,7 @@ const {
     description: customDescription,
     locale = defaultLocale,
     namespace,
+    noindex = false,
     title: customTitle,
 } = Astro.props;
 const pagePath = stripLocalePrefix(Astro.url.pathname);
@@ -48,10 +50,14 @@ const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
 <title>{title}</title>
 <meta content={title} name="title" />
 <meta content={description} name="description" />
-<link href={canonicalURL} rel="canonical" />
+{noindex ? (
+    <meta content="noindex" name="robots" />
+) : (
+    <link href={canonicalURL} rel="canonical" />
+)}
 
 <meta content="website" property="og:type" />
-<meta content={canonicalURL} property="og:url" />
+{!noindex && <meta content={canonicalURL} property="og:url" />}
 <meta content={title} property="og:title" />
 <meta content={description} property="og:description" />
 <meta content={openGraphImageURL} property="og:image" />
@@ -69,18 +75,22 @@ const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
     ))}
 
 <meta content="summary" name="twitter:card" />
-{locales.map((alternateLocale) => (
-    <link
-        href={getAbsoluteLocaleUrl(alternateLocale, alternatePagePath)}
-        hreflang={alternateLocale}
-        rel="alternate"
-    />
-))}
-<link
-    href={getAbsoluteLocaleUrl(defaultLocale, alternatePagePath)}
-    hreflang="x-default"
-    rel="alternate"
-/>
+{!noindex && (
+    <>
+        {locales.map((alternateLocale) => (
+            <link
+                href={getAbsoluteLocaleUrl(alternateLocale, alternatePagePath)}
+                hreflang={alternateLocale}
+                rel="alternate"
+            />
+        ))}
+        <link
+            href={getAbsoluteLocaleUrl(defaultLocale, alternatePagePath)}
+            hreflang="x-default"
+            rel="alternate"
+        />
+    </>
+)}
 
 <script is:inline>
     document.documentElement.dataset.theme =

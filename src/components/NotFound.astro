@@ -1,0 +1,56 @@
+---
+import { getTranslator, type Locale } from "@i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslator(locale, "not-found");
+---
+
+<section
+    aria-labelledby="not-found-title"
+    class="flex flex-1 items-center justify-center px-5 py-16 text-center sm:px-8"
+>
+    <div>
+        <pre
+            aria-label={t("catLabel")}
+            class="mx-auto mb-4 w-max text-left text-sm"
+            role="img"
+        >
+       _
+       \`*-.
+        )  _`-.
+       .  : `. .
+       : _   '  \
+       ; *` _.   `*-._
+       `-.-'          `-.
+         ;       `       `.
+         :.       .        \
+         . \  .   :   .-'   .
+         '  `+.;  ;  '      :
+         :  '  |    ;       ;-.
+         ; '   : :`-:     _.`* ;
+[bug] .*' /  .*' ; .*`- +'  `*'
+      `*-*   `*-*  `*-*'
+        </pre>
+        <p class="mb-2 text-xs uppercase tracking-wide text-(--color-muted)">
+            {t("eyebrow")}
+        </p>
+        <h1
+            class="mb-4 text-[clamp(var(--text-2xl),5vw,var(--text-4xl))]"
+            id="not-found-title"
+        >
+            {t("heading")}
+        </h1>
+        <p class="mb-8 text-(--color-secondary)">{t("message")}</p>
+        <a
+            class="text-(--color-accent) underline underline-offset-4"
+            href={getRelativeLocaleUrl(locale, "")}
+        >
+            {t("returnHome")}
+        </a>
+    </div>
+</section>

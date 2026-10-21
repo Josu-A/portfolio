@@ -1,0 +1,9 @@
+{
+  "catLabel": "A cat",
+  "description": "The page you requested could not be found.",
+  "eyebrow": "Error 404",
+  "heading": "Page not found",
+  "message": "We couldn’t find the page you were looking for.",
+  "returnHome": "Return home",
+  "title": "404 - Page not found"
+}

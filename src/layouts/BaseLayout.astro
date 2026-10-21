@@ -9,10 +9,17 @@ interface Props {
     description?: string;
     locale?: Locale;
     namespace: string;
+    noindex?: boolean;
     title?: string;
 }
 
-const { description, locale = defaultLocale, namespace, title } = Astro.props;
+const {
+    description,
+    locale = defaultLocale,
+    namespace,
+    noindex,
+    title,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -22,6 +29,7 @@ const { description, locale = defaultLocale, namespace, title } = Astro.props;
             description={description}
             locale={locale}
             namespace={namespace}
+            noindex={noindex}
             title={title}
         />
     </head>
