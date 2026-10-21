@@ -25,167 +25,175 @@ const isProjectsPage = currentPath === "/projects";
 const localeShortName = locale.toUpperCase();
 ---
 
-<nav
-    aria-label="Primary navigation"
-    class="[anchor-name:--site-header] sticky top-0 z-10 mx-auto flex w-full max-w-5xl shrink-0 items-center justify-between gap-x-4 border-b border-(--color-border) bg-(--color-background) px-5 py-4 sm:grid sm:grid-cols-[1fr_auto_1fr] sm:justify-between sm:gap-y-4 sm:px-8 sm:py-6"
->
-    <a
-        class="text-lg font-bold uppercase tracking-wider no-underline sm:justify-self-start"
-        href={getRelativeLocaleUrl(locale, "")}
+<header class="sticky top-0 z-50 w-full bg-(--color-background)">
+    <nav
+        aria-label="Primary navigation"
+        class="[anchor-name:--site-header] mx-auto flex w-full max-w-5xl shrink-0 items-center justify-between gap-x-4 border-b border-(--color-border) px-5 py-4 sm:grid sm:grid-cols-[1fr_auto_1fr] sm:justify-between sm:gap-y-4 sm:px-8 sm:py-6"
     >
-        Josu’s Space
-    </a>
-    <div
-        aria-label="Site navigation"
-        class="fixed inset-x-0 hidden max-h-[calc(100dvh-anchor-size(height))] w-screen flex-col gap-8 overflow-y-auto border-b border-(--color-border) bg-(--color-background) p-4 text-(--color-foreground) shadow-lg [&:popover-open]:flex [&_a]:transition-colors [&_a]:duration-hover [&_a:hover]:text-(--color-accent) inset-bs-[anchor(bottom)] [position-anchor:--site-header] sm:contents sm:max-h-none sm:overflow-visible"
-        id="mobile-nav-menu"
-        popover="auto"
-    >
-        <div class="flex flex-col gap-4 sm:flex-row sm:gap-6 sm:justify-self-center">
-            <a
-                aria-current={isProjectsPage ? "page" : undefined}
-                class:list={{ "text-(--color-accent)": isProjectsPage }}
-                href={getRelativeLocaleUrl(locale, "projects")}
-            >
-                {t("nav.projects")}
-            </a>
-            <a
-                class="inline-flex items-center gap-2 leading-none"
-                href="mailto:hello@aguijos.dev"
-            >
-                {t("nav.contact")}
-                <ExternalLinkIcon
-                    aria-hidden="true"
-                    class="size-2 shrink-0 self-start"
-                />
-            </a>
-        </div>
-        <div class="flex justify-center border-t border-(--color-border) pt-4 sm:justify-self-end sm:border-0 sm:p-0">
-            <div class="flex items-center gap-2">
-                <button
-                    aria-controls="language-menu"
-                    aria-expanded="false"
-                    aria-haspopup="menu"
-                    aria-label={t("languageLabel")}
-                    class="language-menu-button cursor-pointer rounded-full border border-(--color-border) bg-(--color-background) px-2 py-2 text-xs font-medium text-(--color-foreground) [anchor-name:--language-menu-button]"
-                    id="language-menu-button"
-                    popovertarget="language-menu"
-                    type="button"
+        <a
+            class="text-lg font-bold uppercase tracking-wider no-underline sm:justify-self-start"
+            href={getRelativeLocaleUrl(locale, "")}
+        >
+            Josu’s Space
+        </a>
+        <div
+            aria-label="Site navigation"
+            class="fixed inset-x-0 hidden max-h-[calc(100dvh-anchor-size(height))] w-screen flex-col gap-8 overflow-y-auto border-b border-(--color-border) bg-(--color-background) p-4 text-(--color-foreground) shadow-lg [&:popover-open]:flex [&_a]:transition-colors [&_a]:duration-hover [&_a:hover]:text-(--color-accent) inset-bs-[anchor(bottom)] [position-anchor:--site-header] sm:contents sm:max-h-none sm:overflow-visible"
+            id="mobile-nav-menu"
+            popover="auto"
+        >
+            <div class="flex flex-col gap-4 sm:flex-row sm:gap-6 sm:justify-self-center">
+                <a
+                    aria-current={isProjectsPage ? "page" : undefined}
+                    class:list={{ "text-(--color-accent)": isProjectsPage }}
+                    href={getRelativeLocaleUrl(locale, "projects")}
                 >
-                    {localeShortName}
-                </button>
-                <button
-                    aria-controls="theme-menu"
-                    aria-expanded="false"
-                    aria-haspopup="menu"
-                    aria-label={`${t("theme.label")}: ${t("theme.system")}`}
-                    class="theme-menu-button cursor-pointer rounded-full border border-(--color-border) bg-(--color-background) p-2 text-(--color-foreground) [anchor-name:--theme-menu-button]"
-                    data-theme-label={t("theme.label")}
-                    id="theme-menu-button"
-                    popovertarget="theme-menu"
-                    type="button"
+                    {t("nav.projects")}
+                </a>
+                <a
+                    class="inline-flex items-center gap-2 leading-none"
+                    href="mailto:hello@aguijos.dev"
                 >
-                    <SystemIcon
+                    {t("nav.contact")}
+                    <ExternalLinkIcon
                         aria-hidden="true"
-                        class="size-4"
-                        data-theme-icon="system"
+                        class="size-2 shrink-0 self-start"
                     />
-                    <SunIcon
-                        aria-hidden="true"
-                        class="hidden size-4"
-                        data-theme-icon="light"
-                    />
-                    <MoonIcon
-                        aria-hidden="true"
-                        class="hidden size-4"
-                        data-theme-icon="dark"
-                    />
-                </button>
+                </a>
             </div>
-            <select
-                aria-label={t("theme.label")}
-                class="hidden cursor-pointer rounded border border-(--color-border) bg-(--color-background) px-2 py-1 font-serif text-xs text-(--color-foreground)"
-                id="theme-select"
-            >
-                <option value="system">{t("theme.system")}</option>
-                <option value="light">{t("theme.light")}</option>
-                <option value="dark">{t("theme.dark")}</option>
-            </select>
+            <div class="flex justify-center border-t border-(--color-border) pt-4 sm:justify-self-end sm:border-0 sm:p-0">
+                <div class="flex items-center gap-2">
+                    <button
+                        aria-controls="language-menu"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        aria-label={t("languageLabel")}
+                        class="language-menu-button cursor-pointer rounded-full border border-(--color-border) bg-(--color-background) px-2 py-2 text-xs font-medium text-(--color-foreground) [anchor-name:--language-menu-button]"
+                        id="language-menu-button"
+                        popovertarget="language-menu"
+                        type="button"
+                    >
+                        {localeShortName}
+                    </button>
+                    <button
+                        aria-controls="theme-menu"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        aria-label={`${t("theme.label")}: ${t("theme.system")}`}
+                        class="theme-menu-button cursor-pointer rounded-full border border-(--color-border) bg-(--color-background) p-2 text-(--color-foreground) [anchor-name:--theme-menu-button]"
+                        data-theme-label={t("theme.label")}
+                        id="theme-menu-button"
+                        popovertarget="theme-menu"
+                        type="button"
+                    >
+                        <SystemIcon
+                            aria-hidden="true"
+                            class="size-4"
+                            data-theme-icon="system"
+                        />
+                        <SunIcon
+                            aria-hidden="true"
+                            class="hidden size-4"
+                            data-theme-icon="light"
+                        />
+                        <MoonIcon
+                            aria-hidden="true"
+                            class="hidden size-4"
+                            data-theme-icon="dark"
+                        />
+                    </button>
+                </div>
+                <select
+                    aria-label={t("theme.label")}
+                    class="hidden cursor-pointer rounded border border-(--color-border) bg-(--color-background) px-2 py-1 font-serif text-xs text-(--color-foreground)"
+                    id="theme-select"
+                >
+                    <option value="system">{t("theme.system")}</option>
+                    <option value="light">{t("theme.light")}</option>
+                    <option value="dark">{t("theme.dark")}</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <button
-        aria-controls="mobile-nav-menu"
-        aria-expanded="false"
-        aria-label={t("nav.openMenu")}
-        class="mobile-nav-button cursor-pointer rounded border border-(--color-border) p-2 text-(--color-foreground) sm:hidden"
-        data-close-label={t("nav.closeMenu")}
-        data-open-label={t("nav.openMenu")}
-        id="mobile-nav-button"
-        popovertarget="mobile-nav-menu"
-        type="button"
-    >
-        <span aria-hidden="true" class="block h-0.5 w-4 bg-current"></span>
-        <span aria-hidden="true" class="mt-1 block h-0.5 w-4 bg-current"></span>
-        <span aria-hidden="true" class="mt-1 block h-0.5 w-4 bg-current"></span>
-    </button>
-    <div
-        aria-label={t("languageLabel")}
-        class="fixed inset-auto min-w-32 rounded border border-(--color-border) bg-(--color-background) p-1 text-(--color-foreground) shadow-lg inset-bs-[anchor(bottom)] inset-s-[anchor(center)] -translate-x-1/2 mbs-2 [position-anchor:--language-menu-button] sm:translate-x-0 sm:[inset-inline-start:auto] sm:inset-e-[anchor(right)]"
-        id="language-menu"
-        popover="auto"
-        role="menu"
-    >
-        {localeCodes.map((language) => (
-            <a
-                aria-current={language === locale ? "page" : undefined}
-                class="block rounded px-3 py-2 text-left text-xs no-underline hover:bg-(--color-border)"
-                data-locale={language}
-                href={getRelativeLocaleUrl(language, pagePath)}
-                role="menuitem"
+        <button
+            aria-controls="mobile-nav-menu"
+            aria-expanded="false"
+            aria-label={t("nav.openMenu")}
+            class="mobile-nav-button cursor-pointer rounded border border-(--color-border) p-2 text-(--color-foreground) sm:hidden"
+            data-close-label={t("nav.closeMenu")}
+            data-open-label={t("nav.openMenu")}
+            id="mobile-nav-button"
+            popovertarget="mobile-nav-menu"
+            type="button"
+        >
+            <span aria-hidden="true" class="block h-0.5 w-4 bg-current"></span>
+            <span
+                aria-hidden="true"
+                class="mt-1 block h-0.5 w-4 bg-current"
+            ></span>
+            <span
+                aria-hidden="true"
+                class="mt-1 block h-0.5 w-4 bg-current"
+            ></span>
+        </button>
+        <div
+            aria-label={t("languageLabel")}
+            class="fixed inset-auto min-w-32 rounded border border-(--color-border) bg-(--color-background) p-1 text-(--color-foreground) shadow-lg inset-bs-[anchor(bottom)] inset-s-[anchor(center)] -translate-x-1/2 mbs-2 [position-anchor:--language-menu-button] sm:translate-x-0 sm:[inset-inline-start:auto] sm:inset-e-[anchor(right)]"
+            id="language-menu"
+            popover="auto"
+            role="menu"
+        >
+            {localeCodes.map((language) => (
+                <a
+                    aria-current={language === locale ? "page" : undefined}
+                    class="block rounded px-3 py-2 text-left text-xs no-underline hover:bg-(--color-border)"
+                    data-locale={language}
+                    href={getRelativeLocaleUrl(language, pagePath)}
+                    role="menuitem"
+                >
+                    {t(`languages.${language}`)}
+                </a>
+            ))}
+        </div>
+        <div
+            aria-label={t("theme.label")}
+            class="theme-menu fixed inset-auto min-w-32 -translate-x-1/2 rounded border border-(--color-border) bg-(--color-background) p-1 text-(--color-foreground) shadow-lg inset-bs-[anchor(bottom)] inset-s-[anchor(center)] mbs-2 [position-anchor:--theme-menu-button] [position-try-fallbacks:--theme-menu-left,--theme-menu-above] sm:translate-x-0 sm:[inset-inline-start:auto] sm:inset-e-[anchor(right)]"
+            id="theme-menu"
+            popover="auto"
+            role="menu"
+        >
+            <button
+                aria-checked="true"
+                class="flex w-full cursor-pointer items-center gap-2 rounded px-3 py-2 text-left text-xs hover:bg-(--color-border)"
+                data-theme-name={t("theme.system")}
+                data-theme-option="system"
+                role="menuitemradio"
+                type="button"
             >
-                {t(`languages.${language}`)}
-            </a>
-        ))}
-    </div>
-    <div
-        aria-label={t("theme.label")}
-        class="theme-menu fixed inset-auto min-w-32 -translate-x-1/2 rounded border border-(--color-border) bg-(--color-background) p-1 text-(--color-foreground) shadow-lg inset-bs-[anchor(bottom)] inset-s-[anchor(center)] mbs-2 [position-anchor:--theme-menu-button] [position-try-fallbacks:--theme-menu-left,--theme-menu-above] sm:translate-x-0 sm:[inset-inline-start:auto] sm:inset-e-[anchor(right)]"
-        id="theme-menu"
-        popover="auto"
-        role="menu"
-    >
-        <button
-            aria-checked="true"
-            class="flex w-full cursor-pointer items-center gap-2 rounded px-3 py-2 text-left text-xs hover:bg-(--color-border)"
-            data-theme-name={t("theme.system")}
-            data-theme-option="system"
-            role="menuitemradio"
-            type="button"
-        >
-            <SystemIcon aria-hidden="true" class="size-4" />
-            {t("theme.system")}
-        </button>
-        <button
-            aria-checked="false"
-            class="flex w-full cursor-pointer items-center gap-2 rounded px-3 py-2 text-left text-xs hover:bg-(--color-border)"
-            data-theme-name={t("theme.light")}
-            data-theme-option="light"
-            role="menuitemradio"
-            type="button"
-        >
-            <SunIcon aria-hidden="true" class="size-4" />
-            {t("theme.light")}
-        </button>
-        <button
-            aria-checked="false"
-            class="flex w-full cursor-pointer items-center gap-2 rounded px-3 py-2 text-left text-xs hover:bg-(--color-border)"
-            data-theme-name={t("theme.dark")}
-            data-theme-option="dark"
-            role="menuitemradio"
-            type="button"
-        >
-            <MoonIcon aria-hidden="true" class="size-4" />
-            {t("theme.dark")}
-        </button>
-    </div>
-</nav>
+                <SystemIcon aria-hidden="true" class="size-4" />
+                {t("theme.system")}
+            </button>
+            <button
+                aria-checked="false"
+                class="flex w-full cursor-pointer items-center gap-2 rounded px-3 py-2 text-left text-xs hover:bg-(--color-border)"
+                data-theme-name={t("theme.light")}
+                data-theme-option="light"
+                role="menuitemradio"
+                type="button"
+            >
+                <SunIcon aria-hidden="true" class="size-4" />
+                {t("theme.light")}
+            </button>
+            <button
+                aria-checked="false"
+                class="flex w-full cursor-pointer items-center gap-2 rounded px-3 py-2 text-left text-xs hover:bg-(--color-border)"
+                data-theme-name={t("theme.dark")}
+                data-theme-option="dark"
+                role="menuitemradio"
+                type="button"
+            >
+                <MoonIcon aria-hidden="true" class="size-4" />
+                {t("theme.dark")}
+            </button>
+        </div>
+    </nav>
+</header>
