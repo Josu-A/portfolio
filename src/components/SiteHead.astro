@@ -3,9 +3,12 @@ import {
     defaultLocale,
     getTranslator,
     type Locale,
+    localeMetadata,
     locales,
     stripLocalePrefix,
 } from "@i18n";
+import portrait from "@images/portrait.jpg";
+import { getImage } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { ClientRouter } from "astro:transitions";
 
@@ -27,6 +30,13 @@ const alternatePagePath = pagePath.replace(/^\/|\/$/g, "") || "";
 const t = getTranslator(locale, namespace);
 const description = customDescription ?? t("description");
 const title = customTitle ?? t("title");
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const openGraphImage = await getImage({
+    format: "jpg",
+    src: portrait,
+    width: 600,
+});
+const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
 ---
 
 <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
@@ -38,7 +48,27 @@ const title = customTitle ?? t("title");
 <title>{title}</title>
 <meta content={title} name="title" />
 <meta content={description} name="description" />
-<meta content={locale} property="og:locale" />
+<link href={canonicalURL} rel="canonical" />
+
+<meta content="website" property="og:type" />
+<meta content={canonicalURL} property="og:url" />
+<meta content={title} property="og:title" />
+<meta content={description} property="og:description" />
+<meta content={openGraphImageURL} property="og:image" />
+<meta content={openGraphImage.attributes.width} property="og:image:width" />
+<meta content={openGraphImage.attributes.height} property="og:image:height" />
+<meta content="Portrait of Josu Aguinaga" property="og:image:alt" />
+<meta content={localeMetadata[locale].openGraph} property="og:locale" />
+{locales
+    .filter((alternateLocale) => alternateLocale !== locale)
+    .map((alternateLocale) => (
+        <meta
+            content={localeMetadata[alternateLocale].openGraph}
+            property="og:locale:alternate"
+        />
+    ))}
+
+<meta content="summary" name="twitter:card" />
 {locales.map((alternateLocale) => (
     <link
         href={getRelativeLocaleUrl(alternateLocale, alternatePagePath)}

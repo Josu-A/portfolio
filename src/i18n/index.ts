@@ -3,7 +3,7 @@ import i18next, { type TFunction } from "i18next";
 import { defaultLocale, type Locale, localeCodes } from "./config";
 
 export { localeCodes, localeCodes as locales };
-export { defaultLocale, stripLocalePrefix } from "./config";
+export { defaultLocale, localeMetadata, stripLocalePrefix } from "./config";
 export type { Locale } from "./config";
 
 const translationFiles = import.meta.glob<Record<string, unknown>>(
