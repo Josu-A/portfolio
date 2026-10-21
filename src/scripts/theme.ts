@@ -223,6 +223,8 @@ const setupMobileNavigation = () => {
     }
 };
 
+document.addEventListener("astro:after-swap", () => applyTheme());
+
 document.addEventListener("astro:page-load", () => {
     applyTheme();
     setupThemeMenu();
