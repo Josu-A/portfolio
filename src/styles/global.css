@@ -9,9 +9,9 @@
     --color-background: light-dark(#fffafb, #131515);
     --color-foreground: light-dark(#131515, #fffafb);
     --color-secondary: light-dark(#2b2c28, #bbc7c5);
-    --color-muted: light-dark(#339989, #7de2d1);
-    --color-border: light-dark(#339989, #2b2c28);
-    --color-accent: light-dark(#339989, #7de2d1);
+    --color-muted: light-dark(#2b8073, #7de2d1);
+    --color-border: light-dark(#339989, #61635a);
+    --color-accent: light-dark(#2b8073, #7de2d1);
     color-scheme: light dark;
 }
 
