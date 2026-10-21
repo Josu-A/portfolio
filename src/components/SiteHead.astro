@@ -9,7 +9,7 @@ import {
 } from "@i18n";
 import portrait from "@images/portrait.jpg";
 import { getImage } from "astro:assets";
-import { getRelativeLocaleUrl } from "astro:i18n";
+import { getAbsoluteLocaleUrl } from "astro:i18n";
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
@@ -71,13 +71,13 @@ const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
 <meta content="summary" name="twitter:card" />
 {locales.map((alternateLocale) => (
     <link
-        href={getRelativeLocaleUrl(alternateLocale, alternatePagePath)}
+        href={getAbsoluteLocaleUrl(alternateLocale, alternatePagePath)}
         hreflang={alternateLocale}
         rel="alternate"
     />
 ))}
 <link
-    href={getRelativeLocaleUrl(defaultLocale, alternatePagePath)}
+    href={getAbsoluteLocaleUrl(defaultLocale, alternatePagePath)}
     hreflang="x-default"
     rel="alternate"
 />
