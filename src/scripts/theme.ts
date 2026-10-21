@@ -87,7 +87,7 @@ const setupThemeMenu = () => {
         .querySelectorAll<HTMLElement>("[data-theme-option]")
         .forEach((option) => {
             option.setAttribute(
-                "aria-checked",
+                "aria-pressed",
                 String(
                     option.getAttribute("data-theme-option") === selectedTheme,
                 ),
@@ -114,6 +114,27 @@ const setupThemeMenu = () => {
                 icon.getAttribute("data-theme-icon") !== selectedTheme,
             );
         });
+};
+
+const setupLanguageMenu = () => {
+    const languageButton = document.querySelector("#language-menu-button");
+    const languageMenu = document.querySelector("#language-menu");
+
+    if (
+        !(languageButton instanceof HTMLButtonElement) ||
+        !(languageMenu instanceof HTMLElement) ||
+        initializedMenus.has(languageMenu)
+    ) {
+        return;
+    }
+
+    initializedMenus.add(languageMenu);
+    languageMenu.addEventListener("toggle", () => {
+        languageButton.setAttribute(
+            "aria-expanded",
+            String(languageMenu.matches(":popover-open")),
+        );
+    });
 };
 
 const setupMobileNavigation = () => {
@@ -205,6 +226,7 @@ const setupMobileNavigation = () => {
 document.addEventListener("astro:page-load", () => {
     applyTheme();
     setupThemeMenu();
+    setupLanguageMenu();
     setupMobileNavigation();
 });
 

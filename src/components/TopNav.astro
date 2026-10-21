@@ -66,7 +66,6 @@ const localeShortName = locale.toUpperCase();
                     <button
                         aria-controls="language-menu"
                         aria-expanded="false"
-                        aria-haspopup="menu"
                         aria-label={t("languageLabel")}
                         class="language-menu-button cursor-pointer rounded-full border border-(--color-border) bg-(--color-background) px-2 py-2 text-xs font-medium text-(--color-foreground) [anchor-name:--language-menu-button]"
                         id="language-menu-button"
@@ -78,7 +77,6 @@ const localeShortName = locale.toUpperCase();
                     <button
                         aria-controls="theme-menu"
                         aria-expanded="false"
-                        aria-haspopup="menu"
                         aria-label={`${t("theme.label")}: ${t("theme.system")}`}
                         class="theme-menu-button cursor-pointer rounded-full border border-(--color-border) bg-(--color-background) p-2 text-(--color-foreground) [anchor-name:--theme-menu-button]"
                         data-theme-label={t("theme.label")}
@@ -136,11 +134,9 @@ const localeShortName = locale.toUpperCase();
             ></span>
         </button>
         <div
-            aria-label={t("languageLabel")}
             class="fixed inset-auto min-w-32 rounded border border-(--color-border) bg-(--color-background) p-1 text-(--color-foreground) shadow-lg inset-bs-[anchor(bottom)] inset-s-[anchor(center)] -translate-x-1/2 mbs-2 [position-anchor:--language-menu-button] sm:translate-x-0 sm:[inset-inline-start:auto] sm:inset-e-[anchor(right)]"
             id="language-menu"
             popover="auto"
-            role="menu"
         >
             {localeCodes.map((language) => (
                 <a
@@ -148,47 +144,41 @@ const localeShortName = locale.toUpperCase();
                     class="block rounded px-3 py-2 text-left text-xs no-underline hover:bg-(--color-border)"
                     data-locale={language}
                     href={getRelativeLocaleUrl(language, pagePath)}
-                    role="menuitem"
                 >
                     {t(`languages.${language}`)}
                 </a>
             ))}
         </div>
         <div
-            aria-label={t("theme.label")}
             class="theme-menu fixed inset-auto min-w-32 -translate-x-1/2 rounded border border-(--color-border) bg-(--color-background) p-1 text-(--color-foreground) shadow-lg inset-bs-[anchor(bottom)] inset-s-[anchor(center)] mbs-2 [position-anchor:--theme-menu-button] [position-try-fallbacks:--theme-menu-left,--theme-menu-above] sm:translate-x-0 sm:[inset-inline-start:auto] sm:inset-e-[anchor(right)]"
             id="theme-menu"
             popover="auto"
-            role="menu"
         >
             <button
-                aria-checked="true"
+                aria-pressed="true"
                 class="flex w-full cursor-pointer items-center gap-2 rounded px-3 py-2 text-left text-xs hover:bg-(--color-border)"
                 data-theme-name={t("theme.system")}
                 data-theme-option="system"
-                role="menuitemradio"
                 type="button"
             >
                 <SystemIcon aria-hidden="true" class="size-4" />
                 {t("theme.system")}
             </button>
             <button
-                aria-checked="false"
+                aria-pressed="false"
                 class="flex w-full cursor-pointer items-center gap-2 rounded px-3 py-2 text-left text-xs hover:bg-(--color-border)"
                 data-theme-name={t("theme.light")}
                 data-theme-option="light"
-                role="menuitemradio"
                 type="button"
             >
                 <SunIcon aria-hidden="true" class="size-4" />
                 {t("theme.light")}
             </button>
             <button
-                aria-checked="false"
+                aria-pressed="false"
                 class="flex w-full cursor-pointer items-center gap-2 rounded px-3 py-2 text-left text-xs hover:bg-(--color-border)"
                 data-theme-name={t("theme.dark")}
                 data-theme-option="dark"
-                role="menuitemradio"
                 type="button"
             >
                 <MoonIcon aria-hidden="true" class="size-4" />
