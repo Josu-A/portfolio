@@ -37,7 +37,7 @@ const viewProjectText = t("viewProject");
 
 <article
     class:list={[
-        "relative z-0 grid items-center gap-4 py-2 transition-transform duration-hover hover:z-10 hover:scale-[1.03]",
+        "relative z-0 grid items-center gap-4 py-2 transition-transform duration-hover hover:z-10 motion-safe:hover:scale-[1.03]",
         image &&
             (reverse
                 ? "sm:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]"
