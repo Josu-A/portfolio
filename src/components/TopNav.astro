@@ -6,7 +6,7 @@ import {
     localeCodes,
     stripLocalePrefix,
 } from "@i18n";
-import ExternalLinkIcon from "@images/external-link.svg";
+import MailIcon from "@images/mail-envelop.svg";
 import MoonIcon from "@images/theme-moon.svg";
 import SunIcon from "@images/theme-sun.svg";
 import SystemIcon from "@images/theme-system.svg";
@@ -54,10 +54,7 @@ const localeShortName = locale.toUpperCase();
                     href="mailto:hello@aguijos.dev"
                 >
                     {t("nav.contact")}
-                    <ExternalLinkIcon
-                        aria-hidden="true"
-                        class="size-2 shrink-0 self-start"
-                    />
+                    <MailIcon aria-hidden="true" class="size-4 shrink-0" />
                 </a>
             </div>
             <div class="flex justify-center border-t border-(--color-border) pt-4 sm:justify-self-end sm:border-0 sm:p-0">
