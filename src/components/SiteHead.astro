@@ -98,8 +98,12 @@ const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
 )}
 
 <script is:inline>
-    document.documentElement.dataset.theme =
-        localStorage.getItem("theme") || "system";
+    try {
+        document.documentElement.dataset.theme =
+            localStorage.getItem("theme") || "system";
+    } catch {
+        document.documentElement.dataset.theme = "system";
+    }
 </script>
 <script src="@scripts/theme.ts"></script>
 

@@ -4,8 +4,31 @@ type Theme = (typeof themes)[number];
 const isTheme = (value: null | string): value is Theme =>
     value !== null && themes.includes(value as Theme);
 
+const readStorage = (key: string): null | string => {
+    try {
+        return localStorage.getItem(key);
+    } catch {
+        return null;
+    }
+};
+
+const writeStorage = (key: string, value: string) => {
+    try {
+        localStorage.setItem(key, value);
+    } catch {
+        // localStorage blocked; nothing to do.
+    }
+};
+
+let chosenTheme: null | Theme = null;
+
+const saveTheme = (theme: Theme) => {
+    chosenTheme = theme;
+    writeStorage("theme", theme);
+};
+
 const getStoredTheme = (): Theme => {
-    const storedTheme = localStorage.getItem("theme");
+    const storedTheme = chosenTheme ?? readStorage("theme");
 
     return isTheme(storedTheme) ? storedTheme : "system";
 };
@@ -48,7 +71,9 @@ const setupThemeFallback = () => {
 
     themeSelect.setAttribute("aria-label", themeLabel);
     themeSelect.addEventListener("change", () => {
-        localStorage.setItem("theme", themeSelect.value);
+        if (isTheme(themeSelect.value)) {
+            saveTheme(themeSelect.value);
+        }
         applyTheme();
     });
 };
@@ -251,7 +276,7 @@ document.addEventListener("click", (event) => {
         return;
     }
 
-    localStorage.setItem("theme", theme);
+    saveTheme(theme);
     applyTheme();
     setupThemeMenu();
     document.querySelector<HTMLElement>("#theme-menu")?.hidePopover();
@@ -273,6 +298,6 @@ document.addEventListener("click", (event) => {
     const locale = localeLink.dataset.locale;
 
     if (locale) {
-        localStorage.setItem("locale", locale);
+        writeStorage("locale", locale);
     }
 });
