@@ -1,0 +1,57 @@
+---
+import { defaultLocale, getTranslator, localeCodes } from "@i18n";
+import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from "astro:i18n";
+
+const t = getTranslator(defaultLocale, "common");
+const siteURL = new URL("/", Astro.site);
+---
+
+<!doctype html>
+<html lang={defaultLocale}>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="light dark" name="color-scheme" />
+        <title>Josu’s Space</title>
+        <link href={siteURL} rel="canonical" />
+        {localeCodes.map((locale) => (
+            <link
+                href={getAbsoluteLocaleUrl(locale, "")}
+                hreflang={locale}
+                rel="alternate"
+            />
+        ))}
+        <link href={siteURL} hreflang="x-default" rel="alternate" />
+        <script define:vars={{ defaultLocale, localeCodes }} is:inline>
+            const getSavedLocale = () => {
+                try {
+                    return localStorage.getItem("locale");
+                } catch {
+                    return null;
+                }
+            };
+
+            const locale =
+                [
+                    getSavedLocale(),
+                    ...navigator.languages.map((language) =>
+                        language.slice(0, 2).toLowerCase(),
+                    ),
+                ].find((language) => localeCodes.includes(language)) ??
+                defaultLocale;
+
+            location.replace(`/${locale}/`);
+        </script>
+    </head>
+    <body>
+        <ul>
+            {localeCodes.map((locale) => (
+                <li>
+                    <a href={getRelativeLocaleUrl(locale, "")} lang={locale}>
+                        {t(`languages.${locale}`)}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </body>
+</html>
