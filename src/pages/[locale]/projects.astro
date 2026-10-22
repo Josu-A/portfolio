@@ -1,0 +1,20 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+
+import ProjectsSection from "@components/ProjectsSection.astro";
+import { localeCodes } from "@i18n";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export const getStaticPaths = () =>
+    localeCodes.map((locale) => ({ params: { locale }, props: { locale } }));
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { locale } = Astro.props;
+---
+
+<BaseLayout locale={locale} namespace="projects">
+    <main>
+        <ProjectsSection locale={locale} />
+    </main>
+</BaseLayout>

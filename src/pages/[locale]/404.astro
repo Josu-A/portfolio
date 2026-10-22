@@ -1,0 +1,20 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+
+import NotFound from "@components/NotFound.astro";
+import { localeCodes } from "@i18n";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export const getStaticPaths = () =>
+    localeCodes.map((locale) => ({ params: { locale }, props: { locale } }));
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { locale } = Astro.props;
+---
+
+<BaseLayout locale={locale} namespace="not-found" noindex>
+    <main class="flex flex-1">
+        <NotFound locale={locale} />
+    </main>
+</BaseLayout>
