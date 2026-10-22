@@ -35,7 +35,10 @@ const {
     </head>
     <body class="m-0 flex min-h-screen flex-col bg-(--color-background) font-sans leading-normal text-(--color-foreground)">
         <TopNav locale={locale} />
-        <div class="flex flex-1 flex-col transition-[filter,opacity] duration-menu [body:has(#mobile-nav-menu:popover-open)_&]:blur-sm [body:has(#mobile-nav-menu:popover-open)_&]:opacity-70">
+        <div
+            class="flex flex-1 flex-col transition-[filter,opacity] duration-menu [body:has(#mobile-nav-menu:popover-open)_&]:blur-sm [body:has(#mobile-nav-menu:popover-open)_&]:opacity-70"
+            data-inert-behind-menu
+        >
             <slot />
             <SiteFooter locale={locale} />
         </div>

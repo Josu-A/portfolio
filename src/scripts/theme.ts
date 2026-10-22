@@ -38,6 +38,14 @@ const applyTheme = (theme: Theme = getStoredTheme()) => {
 };
 
 const initializedMenus = new WeakSet<HTMLElement>();
+
+const restoreFocusOnClose = (menu: HTMLElement, button: HTMLElement) => {
+    const focused = document.activeElement;
+
+    if (focused === document.body || menu.contains(focused)) {
+        button.focus();
+    }
+};
 const initializedNavigationMenus = new WeakSet<HTMLElement>();
 const desktopNavigationQuery = window.matchMedia("(min-width: 40rem)");
 let navigationBreakpointListenerAdded = false;
@@ -128,6 +136,8 @@ const setupThemeMenu = () => {
                 themeMenu
                     .querySelector<HTMLElement>("[data-theme-option]")
                     ?.focus();
+            } else {
+                restoreFocusOnClose(themeMenu, themeButton);
             }
         });
     }
@@ -155,10 +165,12 @@ const setupLanguageMenu = () => {
 
     initializedMenus.add(languageMenu);
     languageMenu.addEventListener("toggle", () => {
-        languageButton.setAttribute(
-            "aria-expanded",
-            String(languageMenu.matches(":popover-open")),
-        );
+        const isOpen = languageMenu.matches(":popover-open");
+
+        languageButton.setAttribute("aria-expanded", String(isOpen));
+        if (!isOpen) {
+            restoreFocusOnClose(languageMenu, languageButton);
+        }
     });
 };
 
@@ -181,13 +193,6 @@ const setupMobileNavigation = () => {
     if (!openLabel || !closeLabel) {
         return;
     }
-    const getFocusableElements = () =>
-        Array.from(
-            navigationMenu.querySelectorAll<HTMLElement>(
-                'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-            ),
-        );
-
     navigationMenu.addEventListener("toggle", () => {
         const isOpen = navigationMenu.matches(":popover-open");
 
@@ -197,39 +202,16 @@ const setupMobileNavigation = () => {
             isOpen ? closeLabel : openLabel,
         );
         document.body.classList.toggle("overflow-hidden", isOpen);
+        document
+            .querySelectorAll<HTMLElement>("[data-inert-behind-menu]")
+            .forEach((element) => {
+                element.inert = isOpen;
+            });
 
         if (isOpen) {
-            getFocusableElements()[0]?.focus();
+            navigationMenu.querySelector<HTMLElement>("a[href]")?.focus();
         } else {
             navigationButton.focus();
-        }
-    });
-
-    navigationMenu.addEventListener("keydown", (event) => {
-        if (event.key !== "Tab") {
-            return;
-        }
-
-        const focusableElements = getFocusableElements();
-
-        if (focusableElements.length === 0) {
-            event.preventDefault();
-            return;
-        }
-
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements.at(-1);
-
-        if (!lastElement) {
-            return;
-        }
-
-        if (event.shiftKey && document.activeElement === firstElement) {
-            event.preventDefault();
-            lastElement.focus();
-        } else if (!event.shiftKey && document.activeElement === lastElement) {
-            event.preventDefault();
-            firstElement.focus();
         }
     });
 
