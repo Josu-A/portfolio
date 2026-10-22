@@ -37,56 +37,45 @@ const viewProjectText = t("viewProject");
 
 <article
     class:list={[
-        "relative z-0 grid items-center gap-4 py-2 transition-transform duration-hover hover:z-10 motion-safe:hover:scale-[1.03]",
-        image &&
-            (reverse
-                ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]"
-                : "lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]"),
+        "relative z-0 flex flex-col py-2 transition-transform duration-hover hover:z-10 motion-safe:hover:scale-[1.03] lg:block",
         !image && "max-w-xl",
         className,
     ]}
 >
+    <h3 class="mb-3 text-3xl font-normal text-balance">{title}</h3>
     {image && (
         <Image
             alt=""
             class:list={[
-                "aspect-auto w-full object-contain max-h-48 drop-shadow-xl lg:max-h-none",
-                reverse ? "lg:order-1" : "lg:order-2",
+                "order-first mb-4 aspect-auto w-full object-contain max-h-48 drop-shadow-xl lg:mt-1 lg:mb-2 lg:max-h-none lg:w-2/5",
+                reverse ? "lg:float-left lg:mr-6" : "lg:float-right lg:ml-6",
             ]}
             priority={eager}
             src={image}
         />
     )}
-    <div
-        class:list={[
-            !reverse && image && "lg:order-1",
-            reverse && image && "lg:order-2",
-        ]}
-    >
-        <h3 class="mb-3 text-3xl font-normal">{title}</h3>
-        <div class="max-w-2xl text-(--color-secondary) space-y-3">
-            {descriptions.map((p) => (
-                <p>{p}</p>
-            ))}
-        </div>
-        <div class="mt-4 flex text-xs items-center justify-between gap-8">
-            <p class="font-mono uppercase tracking-tight text-(--color-muted)">
-                {technologies}
-            </p>
-            {link && (
-                <a
-                    class="group flex items-center gap-2 text-(--color-accent) transition-colors duration-hover hover:text-(--color-foreground)"
-                    href={link}
-                >
-                    <span class="font-mono uppercase tracking-tight">
-                        {viewProjectText}
-                    </span>
-                    <ExternalLinkIcon
-                        aria-hidden="true"
-                        class="size-2 shrink-0 self-start"
-                    />
-                </a>
-            )}
-        </div>
+    <div class="max-w-2xl text-(--color-secondary) space-y-3">
+        {descriptions.map((p) => (
+            <p>{p}</p>
+        ))}
+    </div>
+    <div class="mt-4 flex text-xs items-center justify-between gap-8 lg:clear-both">
+        <p class="font-mono uppercase tracking-tight text-(--color-muted)">
+            {technologies}
+        </p>
+        {link && (
+            <a
+                class="group flex shrink-0 items-center gap-2 whitespace-nowrap text-(--color-accent) transition-colors duration-hover hover:text-(--color-foreground)"
+                href={link}
+            >
+                <span class="font-mono uppercase tracking-tight">
+                    {viewProjectText}
+                </span>
+                <ExternalLinkIcon
+                    aria-hidden="true"
+                    class="size-2 shrink-0 self-start"
+                />
+            </a>
+        )}
     </div>
 </article>
