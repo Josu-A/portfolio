@@ -40,8 +40,8 @@ const viewProjectText = t("viewProject");
         "relative z-0 grid items-center gap-4 py-2 transition-transform duration-hover hover:z-10 motion-safe:hover:scale-[1.03]",
         image &&
             (reverse
-                ? "sm:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]"
-                : "sm:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]"),
+                ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,3fr)]"
+                : "lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)]"),
         !image && "max-w-xl",
         className,
     ]}
@@ -50,8 +50,8 @@ const viewProjectText = t("viewProject");
         <Image
             alt=""
             class:list={[
-                "aspect-auto w-full object-contain max-h-48 drop-shadow-xl sm:max-h-none",
-                reverse ? "sm:order-1" : "sm:order-2",
+                "aspect-auto w-full object-contain max-h-48 drop-shadow-xl lg:max-h-none",
+                reverse ? "lg:order-1" : "lg:order-2",
             ]}
             priority={eager}
             src={image}
@@ -59,8 +59,8 @@ const viewProjectText = t("viewProject");
     )}
     <div
         class:list={[
-            !reverse && image && "sm:order-1",
-            reverse && image && "sm:order-2",
+            !reverse && image && "lg:order-1",
+            reverse && image && "lg:order-2",
         ]}
     >
         <h3 class="mb-3 text-3xl font-normal">{title}</h3>
