@@ -2,7 +2,7 @@ import i18next, { type TFunction } from "i18next";
 
 import { defaultLocale, type Locale, localeCodes } from "./config";
 
-export { localeCodes, localeCodes as locales };
+export { localeCodes };
 export { defaultLocale, localeMetadata, stripLocalePrefix } from "./config";
 export type { Locale } from "./config";
 

@@ -1,4 +1,3 @@
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
@@ -26,7 +25,6 @@ export default defineConfig({
                 ),
             },
         }),
-        mdx(),
         {
             // Cloudflare serves the nearest 404.html, but Astro emits
             // nested 404 pages as <locale>/404/index.html.

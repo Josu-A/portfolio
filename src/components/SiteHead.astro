@@ -3,8 +3,8 @@ import {
     defaultLocale,
     getTranslator,
     type Locale,
+    localeCodes,
     localeMetadata,
-    locales,
     stripLocalePrefix,
 } from "@i18n";
 import portrait from "@images/portrait.jpg";
@@ -66,7 +66,7 @@ const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
 <meta content={openGraphImage.attributes.height} property="og:image:height" />
 <meta content={tCommon("portraitAlt")} property="og:image:alt" />
 <meta content={localeMetadata[locale].openGraph} property="og:locale" />
-{locales
+{localeCodes
     .filter((alternateLocale) => alternateLocale !== locale)
     .map((alternateLocale) => (
         <meta
@@ -78,7 +78,7 @@ const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
 <meta content="summary" name="twitter:card" />
 {!noindex && (
     <>
-        {locales.map((alternateLocale) => (
+        {localeCodes.map((alternateLocale) => (
             <link
                 href={getAbsoluteLocaleUrl(alternateLocale, alternatePagePath)}
                 hreflang={alternateLocale}
