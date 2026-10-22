@@ -1,40 +1,31 @@
 {
   "description": "Lan egin dudan proiektu gogokoenak.",
-  "items": [
-    {
+  "items": {
+    "programming-learning-platform": {
       "description": [
         "Programazioa ikasteko web-plataforma baten garapena.",
         "Proiektuak erabiltzaile-interfaze moderno bat inplementatzea, frontend eta backend web teknologiak integratzea, eta LLM eta MCP oinarri gisa hartuta feedback pedagogikorako sistema bat sortzea barne hartu zuen.",
         "Azken emaitza plataforma funtzional bat izan zen, erabiltzaileei programatzen ikasteko, kodea modu eraginkorrean exekutatzeko eta feedback pertsonalizatua jasotzeko aukera ematen diena."
       ],
-      "image": "programming-learning-platform",
-      "link": "https://github.com/Josu-A/gral",
-      "technologies": "TypeScript, Node.js, PostgreSQL, Express, React, TailwindCSS, Docker, MCP",
       "title": "Programazio-ikaskuntzarako web-plataforma: feedback pedagogikoa LLM eta MCP bidez"
     },
-    {
+    "galaxycnn": {
       "description": [
         "Galaxien irudiak aztertzeko sare neuronal konboluzionaleko eredu baten garapena.",
         "Proiektuak ResNet eta hondar blokeetan oinarritutako ikasketa sakoneko algoritmoak inplementatzea, eredua entrenatzea eta ebaluatzea, eta emaitzak bistaratzea barne hartu zuen.",
         "Azken emaitza eredu eraginkor eta zehatz bat izan zen, galaxien irudiak zehaztasun handiz sailkatzeko gai dena."
       ],
-      "image": "galaxycnn",
-      "link": "https://github.com/Josu-A/GalaxyCNN",
-      "technologies": "Python, PyTorch, Jupyter, Deep Learning",
       "title": "GalaxyCNN"
     },
-    {
+    "nintendo-ds-snake": {
       "description": [
         "Nintendo DSrako Snake jokoaren bertsio baten sorrera, C eta libnds liburutegia erabiliz homebrew garapenerako.",
         "Proiektuak jokoaren mekanikak inplementatzea, grafikoen kudeaketa, kontsolako errendimenduaren optimizazioa eta hardwarearen gaitasunen ikerketa barne hartu zituen.",
         "Azken emaitza joko funtzional eta entretenigarri bat izan zen, maila baxuko programazioan eta plataforma zehatzetarako software garapenean trebetasunak erakusten dituena."
       ],
-      "image": "nintendo-ds-snake",
-      "link": "https://github.com/Josu-A/nds-snake",
-      "technologies": "C, libnds, low-level",
       "title": "Nintendo DS Snake"
     }
-  ],
+  },
   "title": "Lan egin dudan proiektu gogokoenak",
   "viewProject": "Ikusi proiektua"
 }

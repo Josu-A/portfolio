@@ -1,37 +1,40 @@
 ---
 import ProjectCard from "@components/ProjectCard.astro";
-import { projectImages } from "@data/project-images";
-import { getTranslator, type Locale } from "@i18n";
+import { getResource, getTranslator, type Locale } from "@i18n";
+import { z } from "astro/zod";
+import { getCollection } from "astro:content";
 
 interface Props {
     locale: Locale;
 }
 
+const projectText = z.object({
+    description: z.union([z.string(), z.array(z.string())]),
+    title: z.string(),
+});
+
 const { locale } = Astro.props;
 const t = getTranslator(locale, "projects");
-const items = t("items", { returnObjects: true }) as Array<{
-    description: string | string[];
-    image?: string;
-    link?: string;
-    technologies: string;
-    title: string;
-}>;
 const title = t("title");
+const projects = await getCollection("projects");
+const items = projects
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(({ data, id }) => {
+        const text = projectText.safeParse(
+            getResource(locale, "projects", `items.${id}`),
+        );
+
+        if (!text.success) {
+            throw new Error(
+                `Missing or invalid "${locale}" text for project "${id}" in src/i18n/locales/${locale}/projects.json`,
+            );
+        }
+
+        const { order: _order, ...shared } = data;
+
+        return { ...shared, ...text.data };
+    });
 const firstImageIndex = items.findIndex((project) => project.image);
-
-const getProjectImage = (imageKey: string | undefined) => {
-    if (!imageKey) {
-        return undefined;
-    }
-
-    const image = projectImages[imageKey];
-
-    if (!image) {
-        throw new Error(`Missing project image: ${imageKey}`);
-    }
-
-    return image;
-};
 ---
 
 <section aria-labelledby="projects-title" class="py-20" id="projects">
@@ -57,7 +60,6 @@ const getProjectImage = (imageKey: string | undefined) => {
                                 : "lg:col-start-1 lg:col-end-3 lg:mr-10",
                         ]}
                         eager={index === firstImageIndex}
-                        image={getProjectImage(project.image)}
                         locale={locale}
                         reverse={index % 2 !== 0}
                     />

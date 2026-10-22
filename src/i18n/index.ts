@@ -60,3 +60,9 @@ await instance.init({
 
 export const getTranslator = (locale: Locale, namespace: string): TFunction =>
     instance.getFixedT(locale, namespace);
+
+export const getResource = (
+    locale: Locale,
+    namespace: string,
+    key: string,
+): unknown => instance.getResource(locale, namespace, key);

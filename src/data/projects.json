@@ -1,0 +1,23 @@
+[
+  {
+    "id": "programming-learning-platform",
+    "order": 1,
+    "image": "../images/projects/programming-learning-platform.png",
+    "link": "https://github.com/Josu-A/gral",
+    "technologies": "TypeScript, Node.js, PostgreSQL, Express, React, TailwindCSS, Docker, MCP"
+  },
+  {
+    "id": "galaxycnn",
+    "order": 2,
+    "image": "../images/projects/galaxycnn.jpg",
+    "link": "https://github.com/Josu-A/GalaxyCNN",
+    "technologies": "Python, PyTorch, Jupyter, Deep Learning"
+  },
+  {
+    "id": "nintendo-ds-snake",
+    "order": 3,
+    "image": "../images/projects/nintendo-ds-snake.png",
+    "link": "https://github.com/Josu-A/nds-snake",
+    "technologies": "C, libnds, low-level"
+  }
+]
