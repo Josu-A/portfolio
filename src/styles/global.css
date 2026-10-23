@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme inline {
+    --font-sans: var(--font-ibm-plex-sans);
+    --font-serif: var(--font-fraunces);
+    --font-mono: var(--font-noto-sans-mono);
+}
+
 @theme {
     --transition-duration-menu: 200ms;
     --transition-duration-hover: 100ms;

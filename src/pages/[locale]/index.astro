@@ -13,7 +13,7 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { locale } = Astro.props;
 ---
 
-<BaseLayout locale={locale} namespace="home">
+<BaseLayout locale={locale} namespace="home" preloadSerif>
     <main class="flex flex-1">
         <Hero locale={locale} />
     </main>

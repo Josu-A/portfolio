@@ -1,11 +1,40 @@
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import { rename, rmdir } from "node:fs/promises";
 
 import { defaultLocale, localeCodes, localeMetadata } from "./src/i18n/config";
 
 export default defineConfig({
+    fonts: [
+        {
+            cssVariable: "--font-ibm-plex-sans",
+            fallbacks: ["sans-serif"],
+            name: "IBM Plex Sans",
+            provider: fontProviders.fontsource(),
+            styles: ["normal"],
+            subsets: ["latin"],
+            weights: [400, 500, 700],
+        },
+        {
+            cssVariable: "--font-fraunces",
+            fallbacks: ["serif"],
+            name: "Fraunces",
+            provider: fontProviders.fontsource(),
+            styles: ["normal"],
+            subsets: ["latin"],
+            weights: [400],
+        },
+        {
+            cssVariable: "--font-noto-sans-mono",
+            fallbacks: ["monospace"],
+            name: "Noto Sans Mono",
+            provider: fontProviders.fontsource(),
+            styles: ["normal"],
+            subsets: ["latin"],
+            weights: [400],
+        },
+    ],
     i18n: {
         defaultLocale,
         locales: [...localeCodes],

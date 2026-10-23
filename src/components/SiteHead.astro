@@ -8,7 +8,7 @@ import {
     stripLocalePrefix,
 } from "@i18n";
 import portrait from "@images/portrait.jpg";
-import { getImage } from "astro:assets";
+import { Font, getImage } from "astro:assets";
 import { getAbsoluteLocaleUrl } from "astro:i18n";
 import { ClientRouter } from "astro:transitions";
 
@@ -17,6 +17,7 @@ interface Props {
     locale?: Locale;
     namespace: string;
     noindex?: boolean;
+    preloadSerif?: boolean;
     title?: string;
 }
 
@@ -25,6 +26,7 @@ const {
     locale = defaultLocale,
     namespace,
     noindex = false,
+    preloadSerif = false,
     title: customTitle,
 } = Astro.props;
 const pagePath = stripLocalePrefix(Astro.url.pathname);
@@ -43,6 +45,9 @@ const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
 ---
 
 <link href="/favicon.ico" rel="icon" sizes="16x16 32x32 48x48" />
+<Font cssVariable="--font-ibm-plex-sans" preload={[{ weight: 400 }]} />
+<Font cssVariable="--font-fraunces" preload={preloadSerif} />
+<Font cssVariable="--font-noto-sans-mono" />
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
 <meta charset="utf-8" />
 <meta content={Astro.generator} name="generator" />
