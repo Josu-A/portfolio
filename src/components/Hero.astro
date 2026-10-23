@@ -29,11 +29,13 @@ const lead = t("hero.lead");
         format="webp"
         height={400}
         imageClass="size-full object-cover object-top select-none"
-        loading="eager"
         position="top"
+        priority
         quality={80}
+        sizes="(min-width: 40rem) 16rem, 9rem"
         src={portrait}
         width={320}
+        widths={[144, 256, 288, 432, 512, 768]}
     />
     <h1
         class="mb-4 max-w-3xl text-[clamp(var(--text-6xl),5vw,var(--text-8xl))]/[0.9] font-normal text-balance text-center"

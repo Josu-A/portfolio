@@ -33,6 +33,9 @@ const descriptions = Array.isArray(description) ? description : [description];
 
 const t = getTranslator(locale, "projects");
 const viewProjectText = t("viewProject");
+
+const imageWidth =
+    image && Math.max(Math.round((192 * image.width) / image.height), 234);
 ---
 
 <article
@@ -50,10 +53,12 @@ const viewProjectText = t("viewProject");
                 "order-first mb-4 lg:mt-1 lg:mb-2 lg:w-2/5",
                 reverse ? "lg:float-left lg:mr-6" : "lg:float-right lg:ml-6",
             ]}
+            densities={[1, 2, 3]}
             fit="contain"
             imageClass="w-full object-contain max-h-48 drop-shadow-xl lg:max-h-none"
             priority={eager}
             src={image}
+            width={imageWidth}
         />
     )}
     <div class="max-w-2xl text-(--color-secondary) space-y-3">
@@ -67,6 +72,7 @@ const viewProjectText = t("viewProject");
         </p>
         {link && (
             <a
+                aria-label={`${viewProjectText}: ${title}`}
                 class="group flex shrink-0 items-center gap-2 whitespace-nowrap text-(--color-accent) transition-colors duration-hover hover:text-(--color-foreground)"
                 href={link}
             >

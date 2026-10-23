@@ -7,6 +7,7 @@ import sharp from "sharp";
 interface Props {
     alt: string;
     class?: string;
+    densities?: number[];
     draggable?: boolean;
     fade?: boolean;
     fit: "contain" | "cover";
@@ -17,13 +18,16 @@ interface Props {
     position?: string;
     priority?: boolean;
     quality?: ImageQuality;
+    sizes?: string;
     src: ImageMetadata;
     width?: number;
+    widths?: number[];
 }
 
 const {
     alt,
     class: className,
+    densities,
     draggable,
     fade = true,
     fit,
@@ -34,8 +38,10 @@ const {
     position = "center",
     priority,
     quality,
+    sizes,
     src,
     width,
+    widths,
 } = Astro.props;
 
 const imagePath = (src as ImageMetadata & { fsPath: string }).fsPath;
@@ -55,6 +61,8 @@ const createBlurPlaceholder = async (path: string) => {
 };
 
 const placeholder = await createBlurPlaceholder(imagePath);
+
+const responsive = widths ? { sizes, widths } : { densities };
 ---
 
 <div
@@ -69,6 +77,7 @@ const placeholder = await createBlurPlaceholder(imagePath);
             "opacity-0",
             fade && "duration-300 motion-safe:transition-opacity",
         ]}
+        {...responsive}
         draggable={draggable}
         format={format}
         height={height}
