@@ -42,7 +42,8 @@ const openGraphImage = await getImage({
 const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
 ---
 
-<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+<link href="/favicon.ico" rel="icon" sizes="16x16 32x32 48x48" />
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" />
 <meta charset="utf-8" />
 <meta content={Astro.generator} name="generator" />
 
