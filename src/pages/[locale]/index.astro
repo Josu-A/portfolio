@@ -2,8 +2,11 @@
 import type { InferGetStaticPropsType } from "astro";
 
 import Hero from "@components/Hero.astro";
-import { localeCodes } from "@i18n";
+import { socialLinks } from "@data/social-links";
+import { getTranslator, localeCodes } from "@i18n";
+import portrait from "@images/portrait.jpg";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { getImage } from "astro:assets";
 
 export const getStaticPaths = () =>
     localeCodes.map((locale) => ({ params: { locale }, props: { locale } }));
@@ -11,9 +14,31 @@ export const getStaticPaths = () =>
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { locale } = Astro.props;
+const t = getTranslator(locale, "home");
+const personImage = await getImage({
+    format: "jpg",
+    src: portrait,
+    width: 400,
+});
+
+// Structured data telling search engines who the site belongs to.
+const person = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    image: new URL(personImage.src, Astro.site).href,
+    jobTitle: t("jobTitle"),
+    name: "Josu Aguinaga",
+    sameAs: socialLinks.map((link) => link.href),
+    url: new URL("/", Astro.site).href,
+};
 ---
 
 <BaseLayout locale={locale} namespace="home" preloadSerif>
+    <script
+        is:inline
+        set:html={JSON.stringify(person)}
+        type="application/ld+json"
+    />
     <main class="flex flex-1">
         <Hero locale={locale} />
     </main>
