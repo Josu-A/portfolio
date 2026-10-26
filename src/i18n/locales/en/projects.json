@@ -24,6 +24,14 @@
         "The end result was a functional and entertaining game that demonstrates skills in low-level programming and software development for specific platforms."
       ],
       "title": "Nintendo DS Snake"
+    },
+    "multimedia-streaming": {
+      "description": [
+        "Development of a media streaming service offering both pre-recorded videos and live broadcasts.",
+        "The project involved splitting the system into several Docker containers: nginx as a reverse proxy that receives the live stream over RTMP and repackages it as MPEG-DASH, an Express and Pug web server, and an FFmpeg pipeline that converts videos into multiple qualities for adaptive streaming.",
+        "The end result was a website with three players, built with dash.js and Video.js, where viewers can watch adaptive-quality videos, switch quality manually and tune into a live broadcast."
+      ],
+      "title": "Multimedia streaming service"
     }
   },
   "title": "Projects I enjoyed working on",

@@ -19,5 +19,12 @@
     "image": "../images/projects/nintendo-ds-snake.png",
     "link": "https://github.com/Josu-A/nds-snake",
     "technologies": "C, libnds, low-level"
+  },
+  {
+    "id": "multimedia-streaming",
+    "order": 4,
+    "image": "../images/projects/multimedia-streaming.png",
+    "link": "https://github.com/Josu-A/KMM-P2-Multimedia-zerbitzuak",
+    "technologies": "Node.js, Express, Pug, nginx, FFmpeg, MPEG-DASH, RTMP, dash.js, Video.js, Docker"
   }
 ]

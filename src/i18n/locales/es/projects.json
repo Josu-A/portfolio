@@ -24,6 +24,14 @@
         "El resultado final fue un juego funcional y entretenido que demuestra habilidades en programación de bajo nivel y desarrollo de software para plataformas específicas."
       ],
       "title": "Nintendo DS Snake"
+    },
+    "multimedia-streaming": {
+      "description": [
+        "Desarrollo de un servicio de streaming multimedia que ofrece tanto vídeos pregrabados como emisiones en directo.",
+        "El proyecto involucró dividir el sistema en varios contenedores Docker: nginx como proxy inverso que recibe la emisión en directo por RTMP y la convierte a MPEG-DASH, un servidor web con Express y Pug, y un proceso con FFmpeg que convierte los vídeos a múltiples calidades para streaming adaptable.",
+        "El resultado final fue un sitio web con tres reproductores, creados con dash.js y Video.js, donde se pueden ver vídeos con calidad adaptable, cambiar la calidad manualmente y conectarse a una emisión en directo."
+      ],
+      "title": "Servicio de streaming multimedia"
     }
   },
   "title": "Proyectos que he disfrutado desarrollando",

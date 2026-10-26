@@ -24,6 +24,14 @@
         "Azken emaitza joko funtzional eta entretenigarri bat izan zen, maila baxuko programazioan eta plataforma zehatzetarako software garapenean trebetasunak erakusten dituena."
       ],
       "title": "Nintendo DS Snake"
+    },
+    "multimedia-streaming": {
+      "description": [
+        "Aurrez grabatutako bideoak eta zuzeneko emanaldiak eskaintzen dituen multimedia streaming zerbitzu baten garapena.",
+        "Proiektuaren sistema hainbat Docker edukiontzietan banatu zen: Nginx alderantzizko proxy gisa lan egiten zuzeneko emanaldia RTMP bidez jasotzeko eta MPEG-DASH formatura bihurtzeko, Express eta Pug erabiltzen dituen web zerbitzaria, eta bideoak adaptive streaminga bermatzeko kalitate ezberdinetara bihurtzen dituen FFmpeg prozesua.",
+        "Azken emaitza dash.js eta Video.js bidez eraikitako hiru erreproduzitzaile dituen webgune bat izan zen, kalitate moldagarriko bideoak ikusteko, kalitatea eskuz aldatzeko eta zuzeneko emanaldia ikusteko aukera ematen duena."
+      ],
+      "title": "Multimedia streaming zerbitzua"
     }
   },
   "title": "Lan egin dudan proiektu gogokoenak",
