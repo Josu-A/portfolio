@@ -32,6 +32,14 @@
         "The end result was a website with three players, built with dash.js and Video.js, where viewers can watch adaptive-quality videos, switch quality manually and tune into a live broadcast."
       ],
       "title": "Multimedia streaming service"
+    },
+    "voip": {
+      "title": "VoIP telephone exchange with Asterisk",
+      "description": [
+        "Setup of a Voice over IP telephone exchange with Asterisk, compiled from source inside a Docker container, using Zoiper softphones as the phones.",
+        "The project involved configuring SIP over UDP with PJSIP templates for four extensions, writing the dialplan that routes calls between them, giving each extension its own voicemail box, and adding call forwarding from one extension to another with a spoken notice for the caller.",
+        "The end result was a working phone system where extensions can call each other, leave voicemail when nobody answers, and listen to their own messages from a single number that identifies them by caller ID."
+      ]
     }
   },
   "title": "Projects I enjoyed working on",

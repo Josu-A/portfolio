@@ -32,6 +32,14 @@
         "El resultado final fue un sitio web con tres reproductores, creados con dash.js y Video.js, donde se pueden ver vídeos con calidad adaptable, cambiar la calidad manualmente y conectarse a una emisión en directo."
       ],
       "title": "Servicio de streaming multimedia"
+    },
+    "voip": {
+      "title": "Centralita VoIP con Asterisk",
+      "description": [
+        "Puesta en marcha de una centralita de voz sobre IP con Asterisk, compilado desde el código fuente dentro de un contenedor Docker, usando softphones Zoiper como teléfonos.",
+        "El proyecto involucró configurar SIP sobre UDP con plantillas de PJSIP para cuatro extensiones, escribir el plan de marcado que enruta las llamadas entre ellas, dar a cada extensión su propio buzón de voz y añadir el desvío de llamadas de una extensión a otra con un aviso hablado para quien llama.",
+        "El resultado final fue un sistema telefónico funcional en el que las extensiones pueden llamarse entre sí, dejar mensajes de voz cuando nadie responde y escuchar sus propios mensajes desde un único número que las identifica por su caller ID."
+      ]
     }
   },
   "title": "Proyectos que he disfrutado desarrollando",
