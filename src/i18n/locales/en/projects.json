@@ -48,6 +48,14 @@
         "The project involved building a small library of text drawings that are stacked and placed side by side with higher-order functions, calculating the weekday each month starts on and handling leap years, and validating the user's input interactively.",
         "The end result was a compact program that lays out all twelve months of the chosen year as a custom grid in the terminal."
       ]
+    },
+    "self-service": {
+      "title": "Self-service restaurant simulation",
+      "description": [
+        "Development of a concurrent simulation of a self-service restaurant, where customers, waiters and a cook work at the same time while sharing a limited number of seats and dishes.",
+        "The project involved first modelling the system in FSP and checking it with LTSA, then translating that model into Java threads that synchronize through a monitor, and drawing the result in an animated Swing interface with a text-only mode as an alternative.",
+        "The end result was a working simulation where every action follows the verified model step by step."
+      ]
     }
   },
   "title": "Projects I enjoyed working on",

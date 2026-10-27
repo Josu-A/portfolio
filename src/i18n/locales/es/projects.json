@@ -48,6 +48,14 @@
         "El proyecto involucró construir una pequeña biblioteca de dibujos de texto que se apilan y se colocan uno al lado de otro mediante funciones de orden superior, calcular el día de la semana en que empieza cada mes teniendo en cuenta los años bisiestos, y validar la entrada del usuario de forma interactiva.",
         "El resultado final fue un programa compacto que muestra los doce meses del año elegido en una cuadrícula personalizada en el terminal."
       ]
+    },
+    "self-service": {
+      "title": "Simulación de un restaurante autoservicio",
+      "description": [
+        "Desarrollo de una simulación concurrente de un restaurante autoservicio, en la que clientes, camareros y un cocinero actúan a la vez compartiendo un número limitado de plazas y platos.",
+        "El proyecto involucró modelar primero el sistema en FSP y comprobarlo con LTSA, traducir después ese modelo a hilos de Java que se sincronizan mediante un monitor, y mostrar el resultado en una interfaz animada utilizando Swing con un modo alternativo de solo texto.",
+        "El resultado final fue una simulación funcional en la que cada acción sigue paso a paso el modelo verificado."
+      ]
     }
   },
   "title": "Proyectos que he disfrutado desarrollando",

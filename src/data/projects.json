@@ -40,5 +40,12 @@
     "image": "../images/projects/calendar.png",
     "link": "https://github.com/Josu-A/pf-practica1-calendario",
     "technologies": "Haskell, GHC, functional programming"
+  },
+  {
+    "id": "self-service",
+    "order": 7,
+    "image": "../images/projects/self-service.png",
+    "link": "https://github.com/Josu-A/self-service",
+    "technologies": "Java, Swing, concurrency, FSP, LTSA"
   }
 ]

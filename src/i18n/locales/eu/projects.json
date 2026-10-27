@@ -48,6 +48,14 @@
         "Proiektuan testu-marrazkiekin liburutegi txiki bat eraiki behar izan zen, goi-mailako funtzioen bidez marrazkiak bata bestearen gainean eta alboan jartzeko, urte bisustuak kontuan hartuta hilabete bakoitza asteko zein egunetan hasten den kalkulatzea, eta erabiltzailearen sarrera modu interaktiboan balioztatzea.",
         "Azken emaitza programa trinko bat izan zen, aukeratutako urteko hamabi hilabeteak terminalean lauki-sare batean antolatzen dituena."
       ]
+    },
+    "self-service": {
+      "title": "Autozerbitzu jatetxe baten simulazioa",
+      "description": [
+        "Autozerbitzu jatetxe baten simulazio konkurrente baten garapena, non bezeroek, langileek eta sukaldari batek aldi berean lan egiten duten, eserleku eta plater kopuru mugatua partekatuz.",
+        "Proiektuan sistema lehenik FSPn modelatzea eta LTSArekin egiaztatu behar izan zen. Ondoren, eredua Java hariak erabiliz monitore baten bidez sinkronizatu zen. Azkenik, emaitza ikuskatzeko Swing erabiliz interfaze animatu bat sortu zen, baita terminala erabiliz testu hutseko modua ere.",
+        "Azken emaitza akasgabeko simulazio bat izan zen, non ekintza bakoitzak eredua urratsez urrats jarraitzen duen."
+      ]
     }
   },
   "title": "Lan egin dudan proiektu gogokoenak",
