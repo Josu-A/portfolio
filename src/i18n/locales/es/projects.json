@@ -40,6 +40,14 @@
         "El proyecto involucró configurar SIP sobre UDP con plantillas de PJSIP para cuatro extensiones, escribir el plan de marcado que enruta las llamadas entre ellas, dar a cada extensión su propio buzón de voz y añadir el desvío de llamadas de una extensión a otra con un aviso hablado para quien llama.",
         "El resultado final fue un sistema telefónico funcional en el que las extensiones pueden llamarse entre sí, dejar mensajes de voz cuando nadie responde y escuchar sus propios mensajes desde un único número que las identifica por su caller ID."
       ]
+    },
+    "haskell-calendar": {
+      "title": "Calendario en Haskell",
+      "description": [
+        "Desarrollo de un programa de línea de comandos en Haskell que imprime el calendario de cualquier año.",
+        "El proyecto involucró construir una pequeña biblioteca de dibujos de texto que se apilan y se colocan uno al lado de otro mediante funciones de orden superior, calcular el día de la semana en que empieza cada mes teniendo en cuenta los años bisiestos, y validar la entrada del usuario de forma interactiva.",
+        "El resultado final fue un programa compacto que muestra los doce meses del año elegido en una cuadrícula personalizada en el terminal."
+      ]
     }
   },
   "title": "Proyectos que he disfrutado desarrollando",

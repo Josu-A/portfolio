@@ -40,6 +40,14 @@
         "Proiektuak lau luzapenentzako PJSIP txantiloiekin SIP UDP bidez konfiguratzea eskatu zuen, haien arteko deiak bideratzen dituen dialplana idaztea, luzapen bakoitzari bere erantzungailu automatikoa ematea, eta luzapen batetik bestera dei-desbideratzea gehitzea deitzailearentzako ahozko abisuarekin.",
         "Azken emaitza luzapenek elkarri dei egin ditzaketentelefonia-sistema funtzional bat izan zen, inork erantzuten ez duenean ahots-mezuak uzteko eta beren mezuak zenbaki bakar batetik entzuteko aukerarekin, caller IDaren bidez identifikatuta."
       ]
+    },
+    "haskell-calendar": {
+      "title": "Egutegia Haskellen",
+      "description": [
+        "Edozein urteko egutegia inprimatzen duen Haskelleko komando-lerroko programa baten garapena.",
+        "Proiektuan testu-marrazkiekin liburutegi txiki bat eraiki behar izan zen, goi-mailako funtzioen bidez marrazkiak bata bestearen gainean eta alboan jartzeko, urte bisustuak kontuan hartuta hilabete bakoitza asteko zein egunetan hasten den kalkulatzea, eta erabiltzailearen sarrera modu interaktiboan balioztatzea.",
+        "Azken emaitza programa trinko bat izan zen, aukeratutako urteko hamabi hilabeteak terminalean lauki-sare batean antolatzen dituena."
+      ]
     }
   },
   "title": "Lan egin dudan proiektu gogokoenak",

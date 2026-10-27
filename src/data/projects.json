@@ -33,5 +33,12 @@
     "image": "../images/projects/voip.png",
     "link": "https://github.com/Josu-A/KMM-P1-VoIP",
     "technologies": "Asterisk, VoIP, SIP, PJSIP, Zoiper, Docker, Linux"
+  },
+  {
+    "id": "haskell-calendar",
+    "order": 6,
+    "image": "../images/projects/calendar.png",
+    "link": "https://github.com/Josu-A/pf-practica1-calendario",
+    "technologies": "Haskell, GHC, functional programming"
   }
 ]
