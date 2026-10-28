@@ -56,6 +56,14 @@
         "Proiektuan sistema lehenik FSPn modelatzea eta LTSArekin egiaztatu behar izan zen. Ondoren, eredua Java hariak erabiliz monitore baten bidez sinkronizatu zen. Azkenik, emaitza ikuskatzeko Swing erabiliz interfaze animatu bat sortu zen, baita terminala erabiliz testu hutseko modua ere.",
         "Azken emaitza akasgabeko simulazio bat izan zen, non ekintza bakoitzak eredua urratsez urrats jarraitzen duen."
       ]
+    },
+    "distributed-file-system": {
+      "title": "Fitxategi-sistema banatua",
+      "description": [
+        "Karpeta lokal bat urruneko zerbitzari batekin etengabe sinkronizatuta mantentzen duen fitxategi-sistema banatu baten garapena.",
+        "Proiektuan TCP socketen gaineko testu-protokolo propio bat diseinatu behar izan zen, bezero bakoitza bere prozesuan kudeatzen duen eta fitxategi batzuk baztertzen dituen zerbitzari bat eraiki, eta karpetako aldaketak zaintzapean edukitzen dituen zerbitzu lokal bat eraiki, aldaketak zerbitzarian errepika ditzan.",
+        "Amaierako sistemak lokalean fitxategiak eta karpetak sortu, editatu, mugitu edo ezabatzen direnean urruneko kopian automatikoki islatzen ditu."
+      ]
     }
   },
   "title": "Lan egin dudan proiektu gogokoenak",

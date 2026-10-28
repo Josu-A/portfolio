@@ -56,6 +56,14 @@
         "The project involved first modelling the system in FSP and checking it with LTSA, then translating that model into Java threads that synchronize through a monitor, and drawing the result in an animated Swing interface with a text-only mode as an alternative.",
         "The end result was a working simulation where every action follows the verified model step by step."
       ]
+    },
+    "distributed-file-system": {
+      "title": "Distributed file system",
+      "description": [
+        "Development of a distributed file system that keeps a local folder in sync with a remote server, acting as an always up-to-date backup.",
+        "The project involved designing a custom text protocol over TCP sockets, building a server that handles each client in its own process and rejects certain files, and a local service that watches the folder for changes so the client can replay them on the server.",
+        "The end result was a system where creating, editing, moving or deleting files and folders locally is reflected on the remote copy automatically."
+      ]
     }
   },
   "title": "Projects I enjoyed working on",

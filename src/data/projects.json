@@ -47,5 +47,12 @@
     "image": "../images/projects/self-service.png",
     "link": "https://github.com/Josu-A/self-service",
     "technologies": "Java, Swing, concurrency, FSP, LTSA"
+  },
+  {
+    "id": "distributed-file-system",
+    "order": 8,
+    "image": "../images/projects/distributed-file-system.png",
+    "link": "https://github.com/Josu-A/distributed-file-system",
+    "technologies": "Python, TCP, watchdog, Unix"
   }
 ]

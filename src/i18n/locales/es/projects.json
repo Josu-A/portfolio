@@ -56,6 +56,14 @@
         "El proyecto involucró modelar primero el sistema en FSP y comprobarlo con LTSA, traducir después ese modelo a hilos de Java que se sincronizan mediante un monitor, y mostrar el resultado en una interfaz animada utilizando Swing con un modo alternativo de solo texto.",
         "El resultado final fue una simulación funcional en la que cada acción sigue paso a paso el modelo verificado."
       ]
+    },
+    "distributed-file-system": {
+      "title": "Sistema de ficheros distribuido",
+      "description": [
+        "Desarrollo de un sistema de ficheros distribuido que mantiene una carpeta local sincronizada con un servidor remoto, a modo de copia de seguridad constantemente actualizada.",
+        "El proyecto involucró diseñar un protocolo de texto propio sobre sockets TCP, construir un servidor que atiende a cada cliente en su propio proceso y rechaza ciertos ficheros, y un servicio local que vigila los cambios en la carpeta para que el cliente los reproduzca en el servidor.",
+        "El resultado final fue un sistema en el que crear, editar, mover o borrar ficheros y carpetas en local se refleja automáticamente en la copia remota."
+      ]
     }
   },
   "title": "Proyectos que he disfrutado desarrollando",
