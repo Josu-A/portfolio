@@ -64,6 +64,14 @@
         "Proiektuan TCP socketen gaineko testu-protokolo propio bat diseinatu behar izan zen, bezero bakoitza bere prozesuan kudeatzen duen eta fitxategi batzuk baztertzen dituen zerbitzari bat eraiki, eta karpetako aldaketak zaintzapean edukitzen dituen zerbitzu lokal bat eraiki, aldaketak zerbitzarian errepika ditzan.",
         "Amaierako sistemak lokalean fitxategiak eta karpetak sortu, editatu, mugitu edo ezabatzen direnean urruneko kopian automatikoki islatzen ditu."
       ]
+    },
+    "voice-notes": {
+      "title": "Ahots-oharren web aplikazioa",
+      "description": [
+        "Nabigatzailean ahots-oharrak grabatu, zerbitzarian gorde eta esteka baten bidez partekatzeko web aplikazio baten garapena.",
+        "Proiektuan audioa grabatzeko MediaRecorder APIa erabili zen, grabaketak igo, zerrendatu, erreproduzitu eta ezabatzeko Express API bat eraiki zen, erabiltzaileak eta saioak MongoDBn gorde ziren, eta bai bcrypt bidez zifratutako pasahitzdun kontuak, bai Passport bidez Google, GitHub edo Twitterrekin saioa hasteko aukera eskaini zen.",
+        "Amaieran lortutako aplikazioak kontu bat duen edonork bere oharrak eskuratu eta esteka partekatu baten bidez edonorekin partekatzeko aukera ematen du."
+      ]
     }
   },
   "title": "Lan egin dudan proiektu gogokoenak",

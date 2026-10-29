@@ -64,6 +64,14 @@
         "The project involved designing a custom text protocol over TCP sockets, building a server that handles each client in its own process and rejects certain files, and a local service that watches the folder for changes so the client can replay them on the server.",
         "The end result was a system where creating, editing, moving or deleting files and folders locally is reflected on the remote copy automatically."
       ]
+    },
+    "voice-notes": {
+      "title": "Voice notes web app",
+      "description": [
+        "Development of a web application for recording voice notes in the browser, storing them on the server and sharing them through a link.",
+        "The project involved recording audio with the MediaRecorder API, building an Express API to upload, list, play and delete recordings, storing users and sessions in MongoDB, and supporting both password accounts hashed with bcrypt and sign-in with Google, GitHub or Twitter through Passport.",
+        "The end result was an app where anyone with an account can access their notes and share them with others by using a shared link."
+      ]
     }
   },
   "title": "Projects I enjoyed working on",

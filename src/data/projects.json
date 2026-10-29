@@ -54,5 +54,12 @@
     "image": "../images/projects/distributed-file-system.png",
     "link": "https://github.com/Josu-A/distributed-file-system",
     "technologies": "Python, TCP, watchdog, Unix"
+  },
+  {
+    "id": "voice-notes",
+    "order": 9,
+    "image": "../images/projects/voice-notes.png",
+    "link": "https://github.com/Josu-A/ws-ahots-oharra",
+    "technologies": "Node.js, Express, EJS, MongoDB, Passport, OAuth, MediaRecorder API"
   }
 ]

@@ -64,6 +64,14 @@
         "El proyecto involucró diseñar un protocolo de texto propio sobre sockets TCP, construir un servidor que atiende a cada cliente en su propio proceso y rechaza ciertos ficheros, y un servicio local que vigila los cambios en la carpeta para que el cliente los reproduzca en el servidor.",
         "El resultado final fue un sistema en el que crear, editar, mover o borrar ficheros y carpetas en local se refleja automáticamente en la copia remota."
       ]
+    },
+    "voice-notes": {
+      "title": "Aplicación web de notas de voz",
+      "description": [
+        "Desarrollo de una aplicación web para grabar notas de voz en el navegador, guardarlas en el servidor y compartirlas mediante un enlace.",
+        "El proyecto involucró grabar audio con la API MediaRecorder, construir una API con Express para subir, listar, reproducir y borrar grabaciones, guardar usuarios y sesiones en MongoDB, y admitir tanto cuentas con contraseña cifrada con bcrypt como el inicio de sesión con Google, GitHub o Twitter mediante Passport.",
+        "El resultado final fue una aplicación donde cualquier persona con una cuenta puede acceder a sus notas y compartirlas con otros utilizando un enlace compartido."
+      ]
     }
   },
   "title": "Proyectos que he disfrutado desarrollando",
