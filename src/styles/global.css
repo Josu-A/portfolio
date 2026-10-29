@@ -44,6 +44,25 @@ a {
     text-underline-offset: 0.5rem;
 }
 
+@keyframes scroll-reveal {
+    from {
+        opacity: 0;
+        translate: 0 6rem;
+    }
+}
+
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        .scroll-reveal {
+            animation-fill-mode: both;
+            animation-name: scroll-reveal;
+            animation-range: entry 0% entry 24rem;
+            animation-timeline: view();
+            animation-timing-function: linear;
+        }
+    }
+}
+
 @position-try --theme-menu-left {
     inset-inline-start: anchor(left);
     inset-inline-end: auto;

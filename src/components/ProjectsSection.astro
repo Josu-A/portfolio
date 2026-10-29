@@ -55,6 +55,7 @@ const firstImageIndex = items.findIndex((project) => project.image);
                     <ProjectCard
                         {...project}
                         class:list={[
+                            "scroll-reveal",
                             !(index % 2)
                                 ? "lg:col-start-2 lg:col-end-4 lg:ml-10"
                                 : "lg:col-start-1 lg:col-end-3 lg:mr-10",
