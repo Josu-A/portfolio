@@ -47,7 +47,7 @@ const firstImageIndex = items.findIndex((project) => project.image);
     <div class="mx-auto w-full max-w-7xl px-5 relative mt-16 sm:px-8">
         <div
             aria-hidden="true"
-            class="absolute inset-y-0 left-1/2 hidden w-px -translate-x-1/2 bg-(--color-border) lg:block"
+            class="scroll-draw absolute inset-y-0 left-1/2 hidden w-px -translate-x-1/2 bg-(--color-border) lg:block"
         ></div>
         <div class="grid grid-cols-1 gap-20 lg:gap-12">
             {items.map((project, index) => (
@@ -66,7 +66,7 @@ const firstImageIndex = items.findIndex((project) => project.image);
                     />
                     <span
                         aria-hidden="true"
-                        class="absolute left-1/2 top-8 hidden size-4 -translate-x-1/2 rounded-full border-3 border-(--color-border) bg-(--color-background) lg:block"
+                        class="scroll-pop absolute left-1/2 top-8 hidden size-4 -translate-x-1/2 rounded-full border-3 border-(--color-border) bg-(--color-background) lg:block"
                     ></span>
                 </div>
             ))}
