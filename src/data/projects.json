@@ -14,32 +14,32 @@
     "technologies": "Python, Numpy, Scikit-learn, PyTorch, Pandas, Jupyter, Deep Learning"
   },
   {
-    "id": "nintendo-ds-snake",
+    "id": "voice-notes",
     "order": 3,
+    "image": "../images/projects/voice-notes.png",
+    "link": "https://github.com/Josu-A/ws-ahots-oharra",
+    "technologies": "Node.js, Express, EJS, MongoDB, Passport, OAuth, MediaRecorder API"
+  },
+  {
+    "id": "nintendo-ds-snake",
+    "order": 4,
     "image": "../images/projects/nintendo-ds-snake.png",
     "link": "https://github.com/Josu-A/nds-snake",
     "technologies": "C, libnds, low-level"
   },
   {
     "id": "multimedia-streaming",
-    "order": 4,
+    "order": 5,
     "image": "../images/projects/multimedia-streaming.png",
     "link": "https://github.com/Josu-A/KMM-P2-Multimedia-zerbitzuak",
     "technologies": "Node.js, Express, Pug, nginx, FFmpeg, MPEG-DASH, RTMP, dash.js, Video.js, Docker"
   },
   {
-    "id": "voip",
-    "order": 5,
-    "image": "../images/projects/voip.png",
-    "link": "https://github.com/Josu-A/KMM-P1-VoIP",
-    "technologies": "Asterisk, VoIP, SIP, PJSIP, Zoiper, Docker, Linux"
-  },
-  {
-    "id": "haskell-calendar",
+    "id": "distributed-file-system",
     "order": 6,
-    "image": "../images/projects/calendar.png",
-    "link": "https://github.com/Josu-A/pf-practica1-calendario",
-    "technologies": "Haskell, GHC, functional programming"
+    "image": "../images/projects/distributed-file-system.png",
+    "link": "https://github.com/Josu-A/distributed-file-system",
+    "technologies": "Python, TCP, watchdog, Unix"
   },
   {
     "id": "self-service",
@@ -49,17 +49,17 @@
     "technologies": "Java, Swing, concurrency, FSP, LTSA"
   },
   {
-    "id": "distributed-file-system",
+    "id": "voip",
     "order": 8,
-    "image": "../images/projects/distributed-file-system.png",
-    "link": "https://github.com/Josu-A/distributed-file-system",
-    "technologies": "Python, TCP, watchdog, Unix"
+    "image": "../images/projects/voip.png",
+    "link": "https://github.com/Josu-A/KMM-P1-VoIP",
+    "technologies": "Asterisk, VoIP, SIP, PJSIP, Zoiper, Docker, Linux"
   },
   {
-    "id": "voice-notes",
+    "id": "haskell-calendar",
     "order": 9,
-    "image": "../images/projects/voice-notes.png",
-    "link": "https://github.com/Josu-A/ws-ahots-oharra",
-    "technologies": "Node.js, Express, EJS, MongoDB, Passport, OAuth, MediaRecorder API"
+    "image": "../images/projects/calendar.png",
+    "link": "https://github.com/Josu-A/pf-practica1-calendario",
+    "technologies": "Haskell, GHC, functional programming"
   }
 ]
