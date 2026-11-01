@@ -1,5 +1,5 @@
 {
-  "description": "Una selección de proyectos de software de Josu Aguinaga, con las tecnologías usadas y enlaces a su código fuente.",
+  "description": "Una selección de proyectos de software de Josu Aguinaga Bengoetxea (aguijos), con las tecnologías usadas y enlaces a su código fuente.",
   "items": {
     "programming-learning-platform": {
       "description": [
@@ -74,6 +74,7 @@
       ]
     }
   },
+  "metaTitle": "Proyectos · Josu Aguinaga Bengoetxea (aguijos)",
   "title": "Proyectos que he disfrutado desarrollando",
   "viewProject": "Ver proyecto"
 }

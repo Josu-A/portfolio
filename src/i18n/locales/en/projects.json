@@ -1,5 +1,5 @@
 {
-  "description": "Software projects Josu Aguinaga enjoyed working on, with the technologies behind each one and links to the source code.",
+  "description": "Software projects Josu Aguinaga Bengoetxea (aguijos) enjoyed working on, with the technologies behind each one and links to the source code.",
   "items": {
     "programming-learning-platform": {
       "description": [
@@ -74,6 +74,7 @@
       ]
     }
   },
+  "metaTitle": "Projects · Josu Aguinaga Bengoetxea (aguijos)",
   "title": "Projects I enjoyed working on",
   "viewProject": "View project"
 }

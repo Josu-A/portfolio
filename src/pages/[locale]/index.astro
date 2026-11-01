@@ -25,9 +25,10 @@ const personImage = await getImage({
 const person = {
     "@context": "https://schema.org",
     "@type": "Person",
+    alternateName: ["Josu Aguinaga", "aguijos"],
     image: new URL(personImage.src, Astro.site).href,
     jobTitle: t("jobTitle"),
-    name: "Josu Aguinaga",
+    name: "Josu Aguinaga Bengoetxea",
     sameAs: socialLinks.map((link) => link.href),
     url: new URL("/", Astro.site).href,
 };

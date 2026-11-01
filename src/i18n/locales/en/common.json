@@ -1,5 +1,5 @@
 {
-  "footer": "© {{year}} Josu Aguinaga",
+  "footer": "© {{year}} Josu Aguinaga Bengoetxea",
   "languageLabel": "Language",
   "languages": {
     "en": "English",
@@ -14,7 +14,7 @@
     "projects": "Projects"
   },
   "ogImageAlt": "Portrait of Josu Aguinaga next to the name and the address aguijos.dev",
-  "portraitAlt": "Portrait of Josu Aguinaga",
+  "portraitAlt": "Portrait of Josu Aguinaga Bengoetxea",
   "theme": {
     "dark": "Dark",
     "label": "Color theme",

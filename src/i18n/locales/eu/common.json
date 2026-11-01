@@ -1,5 +1,5 @@
 {
-  "footer": "© {{year}} Josu Aguinaga",
+  "footer": "© {{year}} Josu Aguinaga Bengoetxea",
   "languageLabel": "Hizkuntza",
   "languages": {
     "en": "English",
@@ -14,7 +14,7 @@
     "projects": "Proiektuak"
   },
   "ogImageAlt": "Josu Aguinagaren erretratua, izenaren eta aguijos.dev helbidearen ondoan",
-  "portraitAlt": "Josu Aguinagaren erretratua",
+  "portraitAlt": "Josu Aguinaga Bengoetxearen erretratua",
   "theme": {
     "dark": "Iluna",
     "label": "Kolore-gaia",

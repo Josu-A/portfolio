@@ -2,7 +2,7 @@
 import type { InferGetStaticPropsType } from "astro";
 
 import ProjectsSection from "@components/ProjectsSection.astro";
-import { localeCodes } from "@i18n";
+import { getTranslator, localeCodes } from "@i18n";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 export const getStaticPaths = () =>
@@ -11,9 +11,10 @@ export const getStaticPaths = () =>
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { locale } = Astro.props;
+const t = getTranslator(locale, "projects");
 ---
 
-<BaseLayout locale={locale} namespace="projects">
+<BaseLayout locale={locale} namespace="projects" title={t("metaTitle")}>
     <main>
         <ProjectsSection locale={locale} />
     </main>

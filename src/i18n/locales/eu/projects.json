@@ -1,5 +1,5 @@
 {
-  "description": "Josu Aguinagak gogoz landu dituen software-proiektuen hautaketa, erabilitako teknologiekin eta iturburu-kodearen estekekin.",
+  "description": "Josu Aguinaga Bengoetxeak (aguijos) gogoz landu dituen software-proiektuen hautaketa, erabilitako teknologiekin eta iturburu-kodearen estekekin.",
   "items": {
     "programming-learning-platform": {
       "description": [
@@ -74,6 +74,7 @@
       ]
     }
   },
+  "metaTitle": "Proiektuak · Josu Aguinaga Bengoetxea (aguijos)",
   "title": "Lan egin dudan proiektu gogokoenak",
   "viewProject": "Ikusi proiektua"
 }

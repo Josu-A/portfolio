@@ -44,6 +44,9 @@ export default defineConfig({
     },
     integrations: [
         sitemap({
+            // The root page only redirects to a locale, so list the
+            // localized pages instead.
+            filter: (page) => page !== "https://aguijos.dev/",
             i18n: {
                 defaultLocale,
                 locales: Object.fromEntries(

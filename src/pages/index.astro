@@ -3,6 +3,7 @@ import { defaultLocale, getTranslator, localeCodes } from "@i18n";
 import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from "astro:i18n";
 
 const t = getTranslator(defaultLocale, "common");
+const tHome = getTranslator(defaultLocale, "home");
 const siteURL = new URL("/", Astro.site);
 ---
 
@@ -13,7 +14,8 @@ const siteURL = new URL("/", Astro.site);
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="light dark" name="color-scheme" />
         <meta name="darkreader-lock" />
-        <title>Josu’s Space</title>
+        <title>{tHome("title")}</title>
+        <meta content={tHome("description")} name="description" />
         <link href={siteURL} rel="canonical" />
         {localeCodes.map((locale) => (
             <link
