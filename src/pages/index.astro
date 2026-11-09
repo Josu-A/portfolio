@@ -1,10 +1,9 @@
 ---
 import { defaultLocale, getTranslator, localeCodes } from "@i18n";
-import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from "astro:i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const t = getTranslator(defaultLocale, "common");
 const tHome = getTranslator(defaultLocale, "home");
-const siteURL = new URL("/", Astro.site);
 ---
 
 <!doctype html>
@@ -16,16 +15,8 @@ const siteURL = new URL("/", Astro.site);
         <meta name="darkreader-lock" />
         <title>{tHome("title")}</title>
         <meta content={tHome("description")} name="description" />
-        <link href={siteURL} rel="canonical" />
-        {localeCodes.map((locale) => (
-            <link
-                href={getAbsoluteLocaleUrl(locale, "")}
-                hreflang={locale}
-                rel="alternate"
-            />
-        ))}
-        <link href={siteURL} hreflang="x-default" rel="alternate" />
-        <script define:vars={{ defaultLocale, localeCodes }} is:inline>
+        <meta content="noindex" name="robots" />
+        <script define:vars={{ localeCodes }} is:inline>
             const getSavedLocale = () => {
                 try {
                     return localStorage.getItem("locale");
@@ -40,8 +31,7 @@ const siteURL = new URL("/", Astro.site);
                     ...navigator.languages.map((language) =>
                         language.slice(0, 2).toLowerCase(),
                     ),
-                ].find((language) => localeCodes.includes(language)) ??
-                defaultLocale;
+                ].find((language) => localeCodes.includes(language)) ?? "en";
 
             location.replace(`/${locale}/`);
         </script>

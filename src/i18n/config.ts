@@ -8,9 +8,9 @@ export const localeMetadata: Record<
     Locale,
     { openGraph: string; sitemap: string }
 > = {
-    en: { openGraph: "en_US", sitemap: "en-US" },
-    es: { openGraph: "es_ES", sitemap: "es-ES" },
-    eu: { openGraph: "eu_ES", sitemap: "eu-ES" },
+    en: { openGraph: "en_US", sitemap: "en" },
+    es: { openGraph: "es_ES", sitemap: "es" },
+    eu: { openGraph: "eu_ES", sitemap: "eu" },
 };
 
 const localePrefixPattern = new RegExp(`^/(${localeCodes.join("|")})(?=/|$)`);

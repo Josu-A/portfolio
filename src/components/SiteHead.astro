@@ -90,11 +90,7 @@ const openGraphImageURL = new URL(openGraphImage.src, Astro.site);
             />
         ))}
         <link
-            href={
-                alternatePagePath
-                    ? getAbsoluteLocaleUrl(defaultLocale, alternatePagePath)
-                    : new URL("/", Astro.site)
-            }
+            href={getAbsoluteLocaleUrl("en", alternatePagePath)}
             hreflang="x-default"
             rel="alternate"
         />
